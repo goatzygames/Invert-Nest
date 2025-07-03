@@ -378,3 +378,142 @@ body {
   z-index: 1000; /* makes sure it stays on top */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optional, for subtle shadow */
 }
+
+/* Footer */
+.footer {
+  background-color: #3dd3cc; /* same bright turquoise as navbar */
+  color: #234d23; /* dark green for contrast */
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -4px 10px rgba(60, 150, 140, 0.3);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 3rem;
+}
+
+.footer a {
+  color: #234d23; /* dark green */
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #e6f2f0; /* pale mint */
+  text-decoration: underline;
+}
+
+.footer .social-icons {
+  margin: 1rem 0 0 0;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* --- Product Card Styles --- */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.product-card-v2 {
+  cursor: pointer;
+  max-width: 280px;
+  width: 100%;
+  background: #f6fbf6; /* very light pale green */
+  border: 2px solid #a3c6b4; /* soft green border */
+  border-radius: 24px;
+  box-shadow: 0 4px 14px rgba(86, 165, 118, 0.15);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 1rem; /* add some inner spacing */
+}
+
+.product-card-v2:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 28px rgba(86, 165, 118, 0.35);
+  border-color: #3dd3cc; /* turquoise */
+}
+
+.product-card-v2 img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid #d3eadb;
+  object-fit: cover;
+}
+
+.product-card-v2 h3,
+.product-card-v2 .company {
+  padding: 0.5rem 0 0.5rem 0;
+  color: #2c4a2a;
+  font-weight: 600;
+}
+
+.product-card-v2 button {
+  margin-top: auto;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 24px;
+  background: #3dd3cc; /* turquoise */
+  color: #234d23; /* dark green */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(61, 211, 204, 0.5);
+}
+
+.product-card-v2 button:hover {
+  background: #26b9b3; /* slightly darker turquoise */
+  box-shadow: 0 6px 18px rgba(38, 185, 179, 0.6);
+}
+
+#img-prev, #img-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  user-select: none;
+  z-index: 10;
+}
+
+#img-prev {
+  left: 10px;
+  border-radius: 50% 0 0 50%;
+}
+
+#img-next {
+  right: 10px;
+  border-radius: 0 50% 50% 0;
+}
+
+#img-prev:hover, #img-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+#img-prev:focus, #img-next:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
