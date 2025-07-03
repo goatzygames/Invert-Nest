@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PAGE_TITLE}}</title>
+  <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Invert Nest</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <!-- copy full nav-links structure here same as index.html for consistency -->
+    </ul>
+  </nav>
+  <section class="hero">
+    <div class="banner">
+      <h1>{{PAGE_TITLE}}</h1>
+      <p>Update this intro to highlight {{CATEGORY}} essentials.</p>
+    </div>
+  </section>
+  </section>
+<section class="products" id="product-list">
+  <!-- Products will be inserted here dynamically -->
+</section>
+  <script src="js/main.js"></script>
+  <script src="js/product.js"></script>
+  
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Replace these IDs with the product IDs you want on this page:
+    const productIDs = ['003']; 
+
+    const container = document.getElementById('product-list');
+    container.innerHTML = '';
+
+    productIDs.forEach(id => {
+      const product = products[id];
+      if (!product) return;
+
+      const productHTML = `
+        <div class="product-card" data-id="${id}">
+          <img src="${product.img}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p class="company">${product.company}</p>
+          <p>${product.desc}</p>
+          <p><strong>Price:</strong> $${product.price}</p>
+          <button class="view-product" onclick="location.href='product.html?id=${id}'">View Details</button>
+        </div>
+      `;
+      container.insertAdjacentHTML('beforeend', productHTML);
+    });
+  });
+</script>
+
+<script src="js/product.js"></script>
+
+</body>
+</html>
