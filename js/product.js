@@ -1,359 +1,215 @@
-const products = {
-  '001': {
-    id: '001',
-    categories: ['rodents_toys', 'inverts_decorations'],
-    name: 'Fun Hamster Wheel',
-    company: 'RodentFun',
-    desc: 'A durable wheel for small rodents to stay active.',
-    img: [
-      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-cdn.ubuy.co.in%2F63697361d0fcb11e6537d1d8-bucatstate-hamster-wheel-silent.jpg&f=1&nofb=1&ipt=9548a7b96a7c0718076f9c7ae382d86581ce5e79b2c8dff741247f025c815602',
-      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnaturefins.com%2Fwp-content%2Fuploads%2F2024%2F01%2FHamster-Wheel-Safety-Tips.jpg&f=1&nofb=1&ipt=e710e9f26daa48fdcf74ea7baf82b8ebe494278f0cfec4e6da86bb1769d79bd2',
-      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F714NrHsf4pL._AC_SL1500_.jpg&f=1&nofb=1&ipt=f3ad662078434011786556cc23aabf906257bd4448dd01c69ba1b8402f713fd2'
-    ],
-    price: 14.99,
-    maxQuantity: 2,
-    location: 'Tallinn'
-  },
-  '002': {
-    id: '002',
-    categories: ['rodents_enclosures', 'inverts_enclosures', 'amphibians_enclosures'],
-    name: '40 Gallon Aquarium',
-    company: 'Unknown',
-    desc: '40 gallon or 181 liter aquarium suitable for most inverts, fish, amphibians and some reptiles.',
-    img: [
-      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.offerup.com%2Fzjh340Gw6F2NU1BVrS9WaOXSGiY%3D%2F1920x1440%2F0f45%2F0f4584f52d5845958f25e274f839b1cb.jpg&f=1&nofb=1&ipt=d896e039aef4c99d119267c960441cbac1a51b9b1b1b',
-    ],
-    price: 50,
-    maxQuantity: 1,
-    location: 'Tallinn'
-  }
-};
+document.addEventListener("DOMContentLoaded", function () {
+  // Your products data
+  window.products = {
+    '001': {
+      name: 'Sample Terrarium',
+      company: 'ReptiHome',
+      desc: 'A perfect enclosure for reptiles and amphibians.',
+      img: [
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-cdn.ubuy.co.in%2F63697361d0fcb11e6537d1d8-bucatstate-hamster-wheel-silent.jpg&f=1&nofb=1&ipt=9548a7b96a7c0718076f9c7ae382d86581ce5e79b2c8dff741247f025c815602'
+      ],
+      price: 10.55,
+      location: 'New York Store',
+      categories: ['inverts_enclosures', 'reptiles_enclosures'],
+      longdesc: 'The most suitable enclosures for many invertebrates, reptiles and some amphibians. Perfect also for a growth terrarium where your pet can grow to adulthood and then upgrade to a more suitable enclosure.',
+      amount: 1
+    },
+    '002-InvertNest': {
+      id: '002',
+      name: 'Fun Hamster Wheel',
+      company: 'RodentFun',
+      desc: 'A durable wheel for small rodents to stay active.',
+      img: [
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-cdn.ubuy.co.in%2F63697361d0fcb11e6537d1d8-bucatstate-hamster-wheel-silent.jpg&f=1&nofb=1&ipt=9548a7b96a7c0718076f9c7ae382d86581ce5e79b2c8dff741247f025c815602'
+      ],
+      price: 14.99,
+      location: 'Tallinn',
+      categories: ['rodents_toys', 'inverts_decorations', 'featured'],
+      longdesc: 'Great wheel for many small rodents which is made of wood. It does get worn over time but is very very quiet and easy to use for your partner rodent.',
+      amount: 15
+    },
+    '003-InvertNest': {
+      id: '003',
+      name: '40 Gallon Aquarium',
+      company: 'Unknown',
+      desc: '40 gallon or 181 liter aquarium suitable for most inverts, fish, amphibians and some reptiles.',
+      img: [
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.offerup.com%2Fzjh340Gw6F2NU1BVrS9WaOXSGiY%3D%2F1920x1440%2F0f45%2F0f4584f52d5845958f25e274f839b1cb.jpg&f=1&nofb=1&ipt=d896e039aef4c99d119267c960441cbac1dd19878f5f0907b962c7dc1f7f76b8'
+      ],
+      price: 99.99,
+      location: 'Nomme',
+      categories: ['inverts_enclosures', 'rodents_enclosures', 'amphibians_enclosures', 'reptiles_enclosures', 'featured'],
+      longdesc: 'A 40 Gallon or 181 Liter aquarium perfect for most invertebrates, some rodents, some reptiles and a couple of amphibians. Fairly used, but recently new aquarium silicone has been put.',
+      amount: 1
+    }
+  };
 
-//let currentProductId = null;
-//let currentImageIndex = 0;
-
-function getProductFromQuery() {
+  // Load product
   const params = new URLSearchParams(window.location.search);
-  const productId = params.get('product');
-  console.log('Product ID from URL:', productId);
-//  if (!productId || !products[productId]) {
-//    console.log('Product not found for ID:', productId);
-//    return null;
-//  }
-  return products[productId];
-}
+  const id = params.get('id');
+  const p = products[id] || products['001'];
 
-
-function updateProductDetails(product) {
-  currentProductId = product.id;
-
-  document.getElementById('prod-name').textContent = product.name;
-  document.getElementById('prod-company').textContent = product.company;
-  document.getElementById('prod-desc').textContent = product.desc;
-  document.getElementById('prod-price').textContent = product.price.toFixed(2);
-  document.getElementById('form-product').value = product.id;
-
-  // Set quantity max and reset to 1
   const quantityInput = document.getElementById('form-quantity');
-  quantityInput.max = product.maxQuantity;
-  quantityInput.value = 1;
+  quantityInput.max = p.amount;
 
-  // Load first image
-  currentImageIndex = 0;
-  const prodImg = document.getElementById('prod-img');
-  prodImg.src = product.img[0];
-  prodImg.alt = `Image of ${product.name}`;
+  const quantityLabel = quantityInput.parentElement;
+  const availableNote = document.createElement('small');
+  availableNote.textContent = `Available: ${p.amount}`;
+  availableNote.style.display = 'block';
+  availableNote.style.marginTop = '4px';
+  availableNote.style.color = '#666';
+  quantityLabel.appendChild(availableNote);
 
-  // Setup shipping cost label (initially empty, will update based on country)
-  document.getElementById('shipping-cost-label').textContent = '';
+  quantityInput.addEventListener('input', () => {
+    if (parseInt(quantityInput.value) > p.amount) {
+      quantityInput.value = p.amount;
+    }
+    updatePrices();
+  });
 
-  // Enable/disable next/prev buttons based on images length
-  updateImageButtons(product.img.length);
-}
+  document.getElementById('prod-img').src = p.img;
+  document.getElementById('prod-name').textContent = p.name;
+  document.getElementById('prod-company').textContent = p.company;
+  document.getElementById('form-product').value = p.name;
+  document.getElementById('btn-name').textContent = p.name;
+  document.getElementById('prod-longdesc').textContent = p.longdesc || '';
 
-function updateImageButtons(imageCount) {
-  document.getElementById('img-prev').disabled = (imageCount <= 1);
-  document.getElementById('img-next').disabled = (imageCount <= 1);
-}
-
-function nextImage() {
-  const product = products[currentProductId];
-  if (!product) return;
-  currentImageIndex++;
-  if (currentImageIndex >= product.img.length) {
-    currentImageIndex = 0;
+  let priceElem = document.getElementById('prod-price');
+  if (!priceElem) {
+    priceElem = document.createElement('p');
+    priceElem.id = 'prod-price';
+    priceElem.style.fontWeight = 'bold';
+    priceElem.style.marginTop = '0.5rem';
+    document.querySelector('.banner').appendChild(priceElem);
   }
-  document.getElementById('prod-img').src = product.img[currentImageIndex];
-}
+  priceElem.textContent = `Price: €${p.price.toFixed(2)}`;
 
-function prevImage() {
-  const product = products[currentProductId];
-  if (!product) return;
-  currentImageIndex--;
-  if (currentImageIndex < 0) {
-    currentImageIndex = product.img.length - 1;
+  let locationElem = document.getElementById('prod-location');
+  if (!locationElem) {
+    locationElem = document.createElement('p');
+    locationElem.id = 'prod-location';
+    locationElem.style.marginTop = '0.25rem';
+    document.querySelector('.banner').appendChild(locationElem);
   }
-  document.getElementById('prod-img').src = product.img[currentImageIndex];
-}
+  locationElem.textContent = `Location: ${p.location}`;
 
-// Shipping cost example (can adjust logic here)
-function calculateShippingCost(country) {
-  // Let's say flat rate for EU countries = €5, else €15
-  const euCountries = [
-    'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czechia',
-    'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece',
-    'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania',
-    'Luxembourg', 'Malta', 'Netherlands', 'Poland', 'Portugal', 'Romania',
-    'Slovakia', 'Slovenia', 'Spain', 'Sweden'
-  ];
-  if (euCountries.includes(country)) {
-    return 5;
+  if (!document.getElementById('form-location')) {
+    const locationLabel = document.createElement('label');
+    locationLabel.textContent = 'Location: ';
+    const locationInput = document.createElement('input');
+    locationInput.type = 'text';
+    locationInput.name = 'user_location';
+    locationInput.id = 'form-location';
+    locationInput.required = true;
+    locationInput.placeholder = 'Enter your location for shipping/pickup';
+    locationLabel.appendChild(locationInput);
+    const form = document.getElementById('order-form');
+    form.insertBefore(locationLabel, form.lastElementChild);
   }
-  return 15;
-}
 
-function updateShippingCostLabel() {
-  const country = document.getElementById('country-select').value;
-  if (!country) {
-    document.getElementById('shipping-cost-label').textContent = '';
-    return;
+  const countrySelect = document.getElementById('country-select');
+  const shippingLabel = document.getElementById('shipping-cost-label');
+  const orderButton = document.getElementById('order-button');
+  const unitPrice = document.getElementById('unit-price');
+  const shippingPrice = document.getElementById('shipping-price');
+  const totalPrice = document.getElementById('total-price');
+
+  function getShippingCost(country) {
+    if (country === 'Estonia') return 5;
+    if (["Finland", "Germany", "France", "Sweden", "Other Europe"].includes(country)) return 17;
+    return 17;
   }
-  const cost = calculateShippingCost(country);
-  document.getElementById('shipping-cost-label').textContent = `Shipping Cost: €${cost.toFixed(2)}`;
-}
 
-// Validate quantity input to maxQuantity
-function validateQuantity() {
-  const product = products[currentProductId];
-  if (!product) return;
-  const quantityInput = document.getElementById('form-quantity');
-  let val = parseInt(quantityInput.value, 10);
-  if (isNaN(val) || val < 1) {
-    val = 1;
+  function updatePrices() {
+    const quantity = parseInt(quantityInput.value) || 1;
+    const price = p.price * quantity;
+    const country = countrySelect.value;
+    const shipping = getShippingCost(country);
+    const total = price + shipping;
+
+    unitPrice.textContent = `€${p.price.toFixed(2)} x ${quantity} = €${price.toFixed(2)}`;
+    shippingPrice.textContent = country === 'Non-Europe' ? 'N/A' : `€${shipping.toFixed(2)}`;
+    totalPrice.textContent = country === 'Non-Europe' ? 'Not available' : `€${total.toFixed(2)}`;
+
+    if (country === 'Non-Europe') {
+      shippingLabel.textContent = 'Shipping unavailable to your location';
+      orderButton.disabled = true;
+    } else if (shipping > 0) {
+      shippingLabel.textContent = `Shipping cost: €${shipping.toFixed(0)}`;
+      orderButton.disabled = false;
+    } else {
+      shippingLabel.textContent = '';
+      orderButton.disabled = true;
+    }
   }
-  if (val > product.maxQuantity) {
-    val = product.maxQuantity;
-  }
-  quantityInput.value = val;
-}
 
-// Setup PayPal button
-function setupPayPalButton() {
-  paypal.Buttons({
-    style: {
-      layout: 'vertical',
-      color: 'blue',
-      shape: 'rect',
-      label: 'pay',
-    },
+  countrySelect.addEventListener('change', updatePrices);
+  countrySelect.dispatchEvent(new Event('change'));
 
-    createOrder: function (data, actions) {
-      const product = products[currentProductId];
-//      if (!product) {
-//        alert('Invalid product.');
-//        return actions.reject();
-//      }
+  document.getElementById("order-form").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      const quantity = parseInt(document.getElementById('form-quantity').value, 10);
-      const shippingCountry = document.getElementById('country-select').value;
-      const shippingCost = calculateShippingCost(shippingCountry);
-      const totalAmount = (product.price * quantity) + shippingCost;
+    const form = e.target;
+    const quantity = parseInt(form.quantity.value) || 1;
+    const country = form.country.value;
+    const shipping = getShippingCost(country);
 
-      return actions.order.create({
-        purchase_units: [{
-          description: `${product.name} (x${quantity})`,
-          amount: {
-            currency_code: 'EUR',
-            value: totalAmount.toFixed(2),
-            breakdown: {
-              item_total: {
-                currency_code: 'EUR',
-                value: (product.price * quantity).toFixed(2),
-              },
-              shipping: {
-                currency_code: 'EUR',
-                value: shippingCost.toFixed(2),
-              }
-            }
-          },
-          items: [{
-            name: product.name,
-            unit_amount: {
-              currency_code: 'EUR',
-              value: product.price.toFixed(2),
-            },
-            quantity: quantity.toString()
-          }]
-        }]
-      });
-    },
-
-    onApprove: function (data, actions) {
-      return actions.order.capture().then(function (details) {
-        alert(`Transaction completed by ${details.payer.name.given_name}!`);
-        // Redirect or update UI after success here
-        window.location.href = 'thankyou.html'; // or some page for confirmation
-      });
-    },
-
-    onError: function (err) {
-      console.error(err);
-      alert('An error occurred during the transaction.');
+    if (country === 'Non-Europe') {
+      alert("Sorry, we do not ship outside Europe.");
+      return;
     }
 
-  }).render('#paypal-button-container');
-}
+    orderButton.disabled = true;
+    orderButton.textContent = 'Ordering...';
 
-// Initialization
-document.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get('product'); // or 'id', choose one
-  if (!productId || !products[productId]) {
-    // show error
-    return;
-  }
+    const templateParams = {
+      from_name: form.user_email.value,
+      product_name: p.name,
+      amount: quantity,
+      email: form.user_email.value,
+      contact: form.user_phone.value,
+      country: country,
+      adress: form.address.value,
+      message: form.message.value || '–',
+      user_location: form.user_location.value,
+      total_price: (p.price * quantity).toFixed(2),
+      shipping_cost: shipping.toFixed(2),
+      price: (p.price * quantity + shipping).toFixed(2)
+    };
 
-  currentProductId = productId;  // set global var for PayPal
-  updateProductDetails(products[productId]);
+    emailjs.send('service_j9n1vhx', 'template_gyqiz92', templateParams)
+      .then(() => {
+        window.open('order_confirmed.html', '_self');
+        orderButton.textContent = 'Order';
+        orderButton.disabled = false;
+        form.reset();
+        shippingLabel.textContent = '';
+        orderButton.disabled = true;
+        updatePrices();
+      }, (error) => {
+        alert("Failed to send order. Please try again later.");
+        orderButton.disabled = false;
+        orderButton.textContent = 'Order';
+        console.error(error);
+      });
+  });
 
-  // Setup event listeners
-  document.getElementById('img-next').addEventListener('click', nextImage);
-  document.getElementById('img-prev').addEventListener('click', prevImage);
-  document.getElementById('country-select').addEventListener('change', updateShippingCostLabel);
-  document.getElementById('form-quantity').addEventListener('input', validateQuantity);
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    let timeout;
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(timeout);
+      const menu = dropdown.querySelector('.dropdown-menu');
+      menu.style.display = 'block';
+      menu.classList.add('fadeInAnimation');
+    });
+    dropdown.addEventListener('mouseleave', () => {
+      timeout = setTimeout(() => {
+        const menu = dropdown.querySelector('.dropdown-menu');
+        menu.style.display = 'none';
+        menu.classList.remove('fadeInAnimation');
+      }, 500);
+    });
+  });
 
-  setupPayPalButton();
+  updatePrices();
 });
-
-
-// Global vars for current image index
-let currentImageIndex = 0;
-let currentProduct = null;
-
-// Get product ID from URL ?id=...
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
-
-if (!productId) {
-  console.error('No product id found in URL');
-  displayError('No product selected.');
-} else {
-  loadProduct(productId);
-}
-
-// Display error message in place of product details
-function displayError(message) {
-  const container = document.querySelector('.product-page');
-  if (container) {
-    container.innerHTML = `<p style="color:red; font-weight:bold; padding:2rem;">${message}</p>`;
-  }
-}
-
-function loadProduct(id) {
-  const product = products[id];
-  if (!product) {
-    console.error(`Product with id ${id} not found`);
-    displayError('Product not found.');
-    return;
-  }
-
-  currentProduct = product;
-
-  // Fill in product info
-  document.getElementById('prod-name').textContent = product.name;
-  document.getElementById('prod-company').textContent = product.company;
-  document.getElementById('prod-desc').textContent = product.description;
-  document.getElementById('prod-price').textContent = product.price.toFixed(2);
-
-  // Fill hidden input in form with product ID
-  const formProductInput = document.getElementById('form-product');
-  if (formProductInput) {
-    formProductInput.value = product.id;
-  }
-
-  // Setup image carousel with first image
-  currentImageIndex = 0;
-  updateProductImage();
-
-  // Attach event listeners for image navigation buttons
-  const btnPrev = document.getElementById('img-prev');
-  const btnNext = document.getElementById('img-next');
-  if (btnPrev) btnPrev.addEventListener('click', prevImage);
-  if (btnNext) btnNext.addEventListener('click', nextImage);
-}
-
-// Update <img> src to current image
-function updateProductImage() {
-  if (!currentProduct || !currentProduct.img || currentProduct.img.length === 0) {
-    return;
-  }
-  const imgElem = document.getElementById('prod-img');
-  if (!imgElem) return;
-
-  imgElem.src = currentProduct.img[currentImageIndex];
-  imgElem.alt = `${currentProduct.name} image ${currentImageIndex + 1}`;
-}
-
-// Move to previous image in carousel
-function prevImage() {
-  if (!currentProduct || !currentProduct.img) return;
-
-  currentImageIndex--;
-  if (currentImageIndex < 0) {
-    currentImageIndex = currentProduct.img.length - 1;
-  }
-  updateProductImage();
-}
-
-// Move to next image in carousel
-function nextImage() {
-  if (!currentProduct || !currentProduct.img) return;
-
-  currentImageIndex++;
-  if (currentImageIndex >= currentProduct.img.length) {
-    currentImageIndex = 0;
-  }
-  updateProductImage();
-}
-
-paypal.Buttons({
-  // Create the order on your server
-  async createOrder(data, actions) {
-    // Gather product and quantity info dynamically from your page/form
-    const productSKU = document.getElementById('form-product').value || 'default_sku';
-    const quantity = document.getElementById('form-quantity').value || 1;
-
-    // You might also send price or other info if needed
-
-    const response = await fetch('/my-server/create-paypal-order', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        cart: [{
-          sku: productSKU,
-          quantity: quantity,
-        }],
-      }),
-    });
-
-    const order = await response.json();
-
-    return order.id; // PayPal expects the order ID to continue
-  },
-
-  // Optional: define what happens on approval
-  onApprove(data, actions) {
-    return actions.order.capture().then(function(details) {
-      alert('Transaction completed by ' + details.payer.name.given_name + '!');
-      // You can redirect or show a success message here
-    });
-  },
-
-  // Optional: error handling
-  onError(err) {
-    console.error('PayPal Buttons Error:', err);
-    alert('There was an error processing your payment.');
-  }
-}).render('#paypal-button-container');

@@ -1,116 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Details</title>
-  <link rel="stylesheet" href="css/css.css" />
+  <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
   <nav class="navbar">
     <div class="logo">Invert Nest</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <!-- ... your navigation menu ... -->
+      <li class="dropdown"><a href="#">Invertebrates</a>
+        <ul class="dropdown-menu">
+          <li><a href="inverts_enclosures.html">Enclosures</a></li>
+          <li><a href="inverts_decorations.html">Decorations</a></li>
+          <li><a href="inverts_food.html">Food & Nutrition</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#">Rodents</a>
+        <ul class="dropdown-menu">
+          <li><a href="rodents_enclosures.html">Cages</a></li>
+          <li><a href="rodents_toys.html">Toys</a></li>
+          <li><a href="rodents_food.html">Food</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#">Fish</a>
+        <ul class="dropdown-menu">
+          <li><a href="fish_enclosures.html">Tanks & Stands</a></li>
+          <li><a href="fish_aquascaping.html">Aquascaping</a></li>
+          <li><a href="fish_food.html">Flake & Pellet Food</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#">Reptiles</a>
+        <ul class="dropdown-menu">
+          <li><a href="reptiles_enclosures.html">Terrariums</a></li>
+          <li><a href="reptiles_decorations.html">Decorations</a></li>
+          <li><a href="reptiles_food.html">Food & Supplements</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#">Amphibians</a>
+        <ul class="dropdown-menu">
+          <li><a href="amphibians_enclosures.html">Habitats</a></li>
+          <li><a href="amphibians_decorations.html">Decorations</a></li>
+          <li><a href="amphibians_food.html">Diet & Nutrition</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#">Birds</a>
+        <ul class="dropdown-menu">
+          <li><a href="birds_cages.html">Cages & Aviaries</a></li>
+          <li><a href="birds_perches.html">Perches & Toys</a></li>
+          <li><a href="birds_food.html">Seeds & Feeders</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
-  <main class="container product-page">
-    <section class="hero">
+  <div class="container product-page">
+    <div class="hero">
       <div class="banner">
         <h1 id="prod-name">Product Name</h1>
         <p id="prod-company">Company Name</p>
       </div>
-    </section>
-
-    <section class="products" style="grid-template-columns: 1fr; gap: 2rem; padding: 2rem 0;">
-      <article class="product-card" style="display: flex; gap: 2rem; align-items: flex-start;">
-        <div style="flex: 2; display: flex; flex-direction: column;">
-          <div id="image-container" style="position: relative; width: 100%; max-width: 500px;">
-            <button id="img-prev" aria-label="Previous image"
-              style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); background: rgba(255,255,255,0.7); border: none; cursor: pointer; font-size: 1.5rem; border-radius: 0 6px 6px 0;">
-              ◀
-            </button>
-            <img id="prod-img" src="" alt="Product Image"
-              style="width: 100%; border-radius: 12px; object-fit: contain;" />
-            <button id="img-next" aria-label="Next image"
-              style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); background: rgba(255,255,255,0.7); border: none; cursor: pointer; font-size: 1.5rem; border-radius: 6px 0 0 6px;">
-              ▶
-            </button>
-          </div>
-
-          <p id="prod-desc" style="margin-top: 1rem;">Product description goes here.</p>
-          <p style="font-weight: bold; font-size: 1.25rem; margin-top: 1rem;">Price: €<span id="prod-price">0.00</span></p>
-        </div>
-
-        <form id="order-form" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; max-width: 400px;" onsubmit="return false;">
-          <input type="hidden" name="product" id="form-product" />
-
-          <label>
-            Quantity:
-            <input type="number" name="quantity" id="form-quantity" min="1" value="1" />
-          </label>
-
-          <label>
-            Email:
-            <input type="email" name="user_email" required />
-          </label>
-
-          <label>
-            Phone:
-            <input type="tel" name="user_phone" required />
-          </label>
-
-          <label>
-            Destination Country:
-            <select name="country" id="country-select" required>
-              <option value="">Select country</option>
-              <!-- List countries as before -->
-              <option value="Austria">Austria</option>
-              <option value="Belgium">Belgium</option>
-              <option value="Bulgaria">Bulgaria</option>
-              <!-- ... -->
-              <option value="Iceland">Iceland</option>
-            </select>
-          </label>
-
-          <label>
-            Full Address:
-            <textarea name="address" required></textarea>
-          </label>
-
-          <label id="shipping-cost-label" style="font-weight: bold;"></label>
-
-          <label>
-            Comments:
-            <textarea name="message"></textarea>
-          </label>
-
-          <!-- PayPal Button container -->
-          <div id="paypal-button-container" style="margin-top: 1rem;"></div>
-        </form>
-      </article>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <p>© 2025 InvertNest.eu. All rights reserved.</p>
-      <p>
-        Made with <span class="heart">❤️</span> using
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a>
-        and
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a>.
-      </p>
     </div>
-    <div class="social-icons" role="list">
-      <a href="https://www.youtube.com/@InvertNest" aria-label="YouTube Channel" role="listitem" class="social-icon" target="_blank" rel="noopener noreferrer">▶️</a>
+    <div class="products" style="grid-template-columns: 1fr; gap: 2rem; padding: 2rem 0;">
+ <div class="product-card" style="display: flex; gap: 2rem; align-items: flex-start;">
+  <div style="flex: 2; display: flex; flex-direction: column;">
+    <img id="prod-img" src="" alt="Product Image" style="width: 100%; max-width: 500px; border-radius: 12px; object-fit: contain;">
+    <p id="prod-longdesc" style="margin-top: 2rem;">Product description goes here.</p>
+	
+	<div id="price-info" style="margin-top: 1rem; font-size: 1.1rem; font-weight: 500; background: #f1f1f1; padding: 1rem; border-radius: 12px;">
+  <p>Unit Price: <span id="unit-price">€0.00</span></p>
+  <p>Shipping: <span id="shipping-price">€0.00</span></p>
+  <p><strong>Total: <span id="total-price">€0.00</span></strong></p>
+</div>
+
+  </div>
+  <form id="order-form" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; max-width: 400px;">
+    <input type="hidden" name="product" id="form-product">
+    <label>Quantity: <input type="number" name="quantity" id="form-quantity" min="1" value="1"></label>
+    <label>Email: <input type="email" name="user_email" required></label>
+    <label>Phone: <input type="tel" name="user_phone" required></label>
+<label for="country-select" style="font-weight: bold; margin-top: 1rem;">
+  Destination Country:
+</label>
+<select name="country" id="country-select" required style="
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid #888;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color 0.3s ease;
+  appearance: none;
+  cursor: pointer;
+">
+  <option value="" disabled selected>Select country</option>
+  <option value="Albania">Albania</option>
+  <option value="Andorra">Andorra</option>
+  <option value="Austria">Austria</option>
+  <option value="Belarus">Belarus</option>
+  <option value="Belgium">Belgium</option>
+  <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+  <option value="Bulgaria">Bulgaria</option>
+  <option value="Croatia">Croatia</option>
+  <option value="Cyprus">Cyprus</option>
+  <option value="Czech Republic">Czech Republic</option>
+  <option value="Denmark">Denmark</option>
+  <option value="Estonia">Estonia</option>
+  <option value="Finland">Finland</option>
+  <option value="France">France</option>
+  <option value="Germany">Germany</option>
+  <option value="Greece">Greece</option>
+  <option value="Hungary">Hungary</option>
+  <option value="Iceland">Iceland</option>
+  <option value="Ireland">Ireland</option>
+  <option value="Italy">Italy</option>
+  <option value="Kosovo">Kosovo</option>
+  <option value="Latvia">Latvia</option>
+  <option value="Liechtenstein">Liechtenstein</option>
+  <option value="Lithuania">Lithuania</option>
+  <option value="Luxembourg">Luxembourg</option>
+  <option value="Malta">Malta</option>
+  <option value="Moldova">Moldova</option>
+  <option value="Monaco">Monaco</option>
+  <option value="Montenegro">Montenegro</option>
+  <option value="Netherlands">Netherlands</option>
+  <option value="North Macedonia">North Macedonia</option>
+  <option value="Norway">Norway</option>
+  <option value="Poland">Poland</option>
+  <option value="Portugal">Portugal</option>
+  <option value="Romania">Romania</option>
+  <option value="Russia">Russia</option>
+  <option value="San Marino">San Marino</option>
+  <option value="Serbia">Serbia</option>
+  <option value="Slovakia">Slovakia</option>
+  <option value="Slovenia">Slovenia</option>
+  <option value="Spain">Spain</option>
+  <option value="Sweden">Sweden</option>
+  <option value="Switzerland">Switzerland</option>
+  <option value="Turkey">Turkey</option>
+  <option value="Ukraine">Ukraine</option>
+  <option value="United Kingdom">United Kingdom</option>
+  <option value="Vatican City">Vatican City</option>
+</select>
+
+    </label>
+    <label>Full Address: <textarea name="address" required></textarea></label>
+    <label id="shipping-cost-label" style="font-weight: bold;"></label>
+    <label>Comments: <textarea name="message"></textarea></label>
+    <button id="order-button" type="submit" class="product-card" style="border-radius: 24px; padding: 0.75rem; max-width: 200px;">Order <span id="btn-name"></span></button>
+  </form>
+</div>
+
+
     </div>
-  </footer>
+  </div>
 
-  <!-- Load PayPal JS SDK for buttons only -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AWaT6HA2IR_cMj0uwc5DQRZjlHCFqkwr1vse3HMfNAmJt6HdLpq8oE0BiidFSgBzoIWxXFXvdmAMTmPw&currency=EUR&components=buttons"></script>
-
-  <script src="js/product.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init({
+      publicKey: "fDC7IwPjHjeATTz2c",
+    });
+  })();
+</script>
+<script src="js/product.js"></script>
+<script src=js/main.js"></script>
 </body>
 </html>
