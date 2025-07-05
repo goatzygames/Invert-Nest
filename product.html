@@ -7,6 +7,17 @@
   <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
+  <div class="lang-switcher">
+    <button class="lang-btn" data-lang="et">
+      <img src="imgs/estonianflag.jpg" alt="Estonian">
+    </button>
+    <button class="lang-btn" data-lang="en">
+      <img src="imgs/britishflag.jpg" alt="English">
+    </button>
+    <button class="lang-btn" data-lang="ru">
+      <img src="imgs/russianflag.jpg" alt="Russian">
+    </button>
+  </div>
   <nav class="navbar">
     <div class="logo">Invert Nest</div>
     <ul class="nav-links">
@@ -153,6 +164,7 @@
     <button id="order-button" type="submit" class="product-card" style="border-radius: 24px; padding: 0.75rem; max-width: 200px;">Order <span id="btn-name"></span></button>
   </form>
 </div>
+<div class="product-info"></div>
 
 
     </div>
@@ -168,5 +180,91 @@
 </script>
 <script src="js/product.js"></script>
 <script src=js/main.js"></script>
+<script id="translations" type="application/json">
+const translations = {
+  en: {
+    logo: "Invert Nest",
+    invertebrates: "Invertebrates",
+    enclosures: "Enclosures",
+    decorations: "Decorations",
+    foodNutrition: "Food & Nutrition",
+    rodents: "Rodents",
+    cages: "Cages",
+    toys: "Toys",
+    food: "Food",
+    fish: "Fish",
+    tanksStands: "Tanks & Stands",
+    aquascaping: "Aquascaping",
+    flakePelletFood: "Flake & Pellet Food",
+    reptiles: "Reptiles",
+    terrariums: "Terrariums",
+    foodSupplements: "Food & Supplements",
+    amphibians: "Amphibians",
+    habitats: "Habitats",
+    dietNutrition: "Diet & Nutrition",
+    birds: "Birds",
+    cagesAviaries: "Cages & Aviaries",
+    perchesToys: "Perches & Toys",
+    seedsFeeders: "Seeds & Feeders",
+    bannerTitle: "Customize for Your Pet Type!",
+    bannerDesc: "Change this banner text and image to match each category’s vibe.",
+  },
+  et: {
+    logo: "Invert Pesa",
+    invertebrates: "Selgrootud",
+    enclosures: "Terrariumid",
+    decorations: "Dekoratsioonid",
+    foodNutrition: "Toit ja Toitumine",
+    rodents: "Närilised",
+    cages: "Puurid",
+    toys: "Mänguasjad",
+    food: "Toit",
+    fish: "Kalad",
+    tanksStands: "Akvaariumid ja Alused",
+    aquascaping: "Akvaariumikujundus",
+    flakePelletFood: "Helbed ja Graanulid",
+    reptiles: "Roomajad",
+    terrariums: "Terrariumid",
+    foodSupplements: "Toit ja Toidulisandid",
+    amphibians: "Kahepaiksed",
+    habitats: "Elupaigad",
+    dietNutrition: "Toitumine",
+    birds: "Linnud",
+    cagesAviaries: "Puurid ja Linnumajad",
+    perchesToys: "Istumispulgad ja Mänguasjad",
+    seedsFeeders: "Seemned ja Söötjad",
+    bannerTitle: "Kohanda vastavalt oma lemmikule!",
+    bannerDesc: "Muuda see bänner ja pilt igale kategooriale sobivaks.",
+  },
+  ru: {
+    logo: "Гнездо Инвертов",
+    invertebrates: "Беспозвоночные",
+    enclosures: "Террариумы",
+    decorations: "Декорации",
+    foodNutrition: "Питание",
+    rodents: "Грызуны",
+    cages: "Клетки",
+    toys: "Игрушки",
+    food: "Еда",
+    fish: "Рыбы",
+    tanksStands: "Аквариумы и Подставки",
+    aquascaping: "Акваскейпинг",
+    flakePelletFood: "Хлопья и Гранулы",
+    reptiles: "Рептилии",
+    terrariums: "Террариумы",
+    foodSupplements: "Еда и Добавки",
+    amphibians: "Земноводные",
+    habitats: "Среда обитания",
+    dietNutrition: "Диета и Питание",
+    birds: "Птицы",
+    cagesAviaries: "Клетки и Вольеры",
+    perchesToys: "Жёрдочки и Игрушки",
+    seedsFeeders: "Семена и Кормушки",
+    bannerTitle: "Настройте под своего питомца!",
+    bannerDesc: "Измените этот баннер и изображение для каждой категории.",
+  }
+};
+</script>
+<script src="js/language.js"></script>
 </body>
 </html>
