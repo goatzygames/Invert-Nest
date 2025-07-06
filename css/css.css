@@ -446,7 +446,7 @@ body {
 
 .product-card-v2 img {
   width: 100%;
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 20px 20px;
   border-bottom: 1px solid #d3eadb;
   object-fit: cover;
 }
@@ -460,7 +460,7 @@ body {
 
 .product-card-v2 button {
   margin-top: auto;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 3rem;
   border: none;
   border-radius: 24px;
   background: #3dd3cc; /* turquoise */
@@ -1039,7 +1039,9 @@ button, .nav-links a, .product-card, input, textarea {
   justify-content: center;
   gap: 1rem;
   margin-bottom: 1.2rem;
+  flex-wrap: wrap; /* ✅ allows wrapping on smaller screens */
 }
+
 
 .lang-flags img {
   width: 32px;
@@ -1048,11 +1050,20 @@ button, .nav-links a, .product-card, input, textarea {
   border-radius: 4px;
   border: 2px solid transparent;
   transition: transform 0.2s ease, border-color 0.2s ease;
+  max-width: 80%; /* prevents overflow */
 }
+
 
 .lang-flags img:hover {
   transform: scale(1.1);
   border-color: #aaa;
+}
+
+@media (max-width: 480px) {
+  .lang-flags img {
+    width: 16px;
+    height: 8px;
+  }
 }
 
 #beta-continue {
@@ -1246,4 +1257,78 @@ button, .nav-links a, .product-card, input, textarea {
   transform: translate(calc(6px + 2px), 0);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   background-color: rgba(6, 121, 0, 0.9);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+
+  justify-content: flex-start; /* ← align everything to the left */
+  gap: 20px; /* optional spacing between logo and links */
+}
+
+
+/* Logo styling */
+.navbar .logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 15px;
+  flex-grow: 1;        /* optional if you want links to stretch */
+  justify-content: flex-start; /* align links to the left */
+}
+
+
+/* Make navbar items stack or hide on small screens */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden by default on mobile */
+  }
+
+  .navbar.show .nav-links {
+    display: flex; /* toggle this with JS or checkbox later */
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* Hide the menu toggle (hamburger) on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* optional spacing between ☰ and text */
+  font-size: 20px; /* or whatever you prefer */
+}
+
+.menu-toggle {
+  cursor: pointer;
+  font-size: 24px; /* optional: adjust size of ☰ */
+  user-select: none;
 }

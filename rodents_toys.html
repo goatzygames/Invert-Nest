@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{PAGE_TITLE}}</title>
+  <title>Invert Nest</title>
+  <link rel="icon" href="imgs/nest.png" type="image/png">
   <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
@@ -19,16 +20,68 @@
     </button>
   </div>
   <nav class="navbar">
-    <div class="logo">Invert Nest</div>
+
+<div class="logo" data-i18n="logo">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <span>Invert Nest</span>
+</div>
+
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <!-- copy full nav-links structure here same as index.html for consistency -->
+	<a href="index.html" data-i18n="homepage">Koduleht</a>
+      <li class="dropdown">
+        <a href="#" data-i18n="invertebrates">Selgrootud</a>
+        <ul class="dropdown-menu">
+          <li><a href="inverts_enclosures.html" data-i18n="enclosures">Terraariumid</a></li>
+          <li><a href="inverts_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="inverts_food.html" data-i18n="foodNutrition">Toit ja Toitumine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="rodents">Närilised</a>
+        <ul class="dropdown-menu">
+          <li><a href="rodents_enclosures.html" data-i18n="cages">Puurid</a></li>
+          <li><a href="rodents_toys.html" data-i18n="toys">Mänguasjad</a></li>
+          <li><a href="rodents_food.html" data-i18n="food">Toit</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="fish">Kalad</a>
+        <ul class="dropdown-menu">
+          <li><a href="fish_enclosures.html" data-i18n="tanksStands">Akvaariumid ja Alused</a></li>
+          <li><a href="fish_aquascaping.html" data-i18n="aquascaping">Akvaariumi Sisustused</a></li>
+          <li><a href="fish_food.html" data-i18n="flakePelletFood">Toit ja Toitumine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="reptiles">Roomajad</a>
+        <ul class="dropdown-menu">
+          <li><a href="reptiles_enclosures.html" data-i18n="terrariums">Terraariumid</a></li>
+          <li><a href="reptiles_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="reptiles_food.html" data-i18n="foodSupplements">Toit ja Toitumine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="amphibians">Kahepaiksed</a>
+        <ul class="dropdown-menu">
+          <li><a href="amphibians_enclosures.html" data-i18n="habitats">Elupaigad</a></li>
+          <li><a href="amphibians_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="amphibians_food.html" data-i18n="dietNutrition">Toit ja Toitumine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="birds">Linnud</a>
+        <ul class="dropdown-menu">
+          <li><a href="birds_cages.html" data-i18n="cagesAviaries">Puurid ja Linnumajad</a></li>
+          <li><a href="birds_perches.html" data-i18n="perchesToys">Õrred ja Mänguasjad</a></li>
+          <li><a href="birds_food.html" data-i18n="seedsFeeders">Seemned ja Söötjad</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
   <section class="hero">
     <div class="banner">
-      <h1>All What Your Little Rodent Friend Wants!</h1>
-      <p>Enrichment and toys for all kinds of rodents</p>
+      <h1 data-i18n="banner1">Kõik, Mida Sinu Väike Närilase Sõber Tahab!</h1>
+      <p data-i18n="banner2">Mitmesugused rikastused ja mänguasjad kõigile närilistele</p>
     </div>
   </section>
 <section class="products" id="product-list">
@@ -80,6 +133,126 @@ window.addEventListener('DOMContentLoaded', () => {
     <a href="#" aria-label="Instagram">🌱</a>
   </div>
 </footer>
+
+  <!-- Translation Script -->
+  <script>
+    const translations = {
+      en: {
+        invertebrates: "Invertebrates",
+		amphibians: "Amphibians",
+		rodents: "Rodents",
+		reptiles: "Reptiles",
+		birds: "Birds",
+		fish: "Fish",
+        enclosures: "Enclosures",
+        decorations: "Decorations",
+        foodNutrition: "Food & Nutrition",
+        unitPrice: "Unit Price:",
+        shipping: "Shipping:",
+        total: "Total:",
+        quantity: "Quantity:",
+        email: "Email:",
+        phone: "Phone:",
+        country: "Country:",
+        selectCountry: "Select Country",
+        address: "Address:",
+        message: "Message:",
+		terrariums: "Terrariums",
+	    decorations: "Decorations",
+		food: "Food",
+		cages: "Cages",
+		toys: "Toys",
+		aquariums: "Aquariums",
+		aquarium_decorations: "Aquascaping",
+		cages_and_bird_cages: "Cages and Bird Houses",
+		perches_and_toys: "Perches and Toys",
+		seeds_and_feeders: "Seeds and Feeders",
+		habitats: "Habitats",
+		banner1: "All What Your Little Rodent Friend Wants!",
+		banner2: "Enrichment and toys for all kinds of rodents"
+
+
+      },
+      ru: {
+        invertebrates: "Беспозвоночные",
+        enclosures: "Террариумы",
+		amphibians: "Амфибии",
+		rodents: "Грызуны",
+		reptiles: "Рептилии",
+		birds: "Птицы",
+		fish: "Рыбы",
+        decorations: "Украшения",
+        foodNutrition: "Питание",
+        unitPrice: "Цена за единицу:",
+        shipping: "Доставка:",
+        total: "Итого:",
+        quantity: "Количество:",
+        email: "Почта:",
+        phone: "Телефон:",
+        country: "Страна:",
+        selectCountry: "Выберите страну",
+        address: "Адрес:",
+        message: "Сообщение:",
+		terrariums: "Террариумы",
+		decorations: "Декорации",
+		food: "Корм",
+		cages: "Клетки",
+		toys: "Игрушки",
+		aquariums: "Аквариумы",
+		aquarium_decorations: "Оформление аквариума",
+		cages_and_bird_cages: "Клетки и Домики для птиц",
+		perches_and_toys: "Жердочки и Игрушки",
+		seeds_and_feeders: "Семена и Кормушки",
+		habitats: "Среда обитания",
+		banner1: "Всё, что хочет ваш маленький грызун!",
+		banner2: "Обогащение среды и игрушки для всех видов грызунов"
+
+      }
+      // Estonian is default, so no need to translate
+    };
+
+    function applyTranslations(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (lang !== "et" && translations[lang] && translations[lang][key]) {
+  el.textContent = translations[lang][key];
+} else if (lang === "et") {
+  // Restore Estonian from a data-original attribute
+  if (el.dataset.original) {
+    el.textContent = el.dataset.original;
+  }
+}
+
+      });
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      applyTranslations(lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang;
+        setLanguage(lang);
+	    location.reload();
+      });
+    });
+
+    // On page load
+    const savedLang = localStorage.getItem("lang") || "et";
+    applyTranslations(savedLang);
+
+// Store original Estonian text for restoring later
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  if (!el.dataset.original) {
+    el.dataset.original = el.textContent;
+  }
+});
+
+
+
+  </script>
 
 </body>
 </html>

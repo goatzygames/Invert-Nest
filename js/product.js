@@ -1,43 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Your products data
   window.products = {
-    '001': {
-      name: 'Sample Terrarium',
-      company: 'ReptiHome',
-      desc: 'A perfect enclosure for reptiles and amphibians.',
-      img: [
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-cdn.ubuy.co.in%2F63697361d0fcb11e6537d1d8-bucatstate-hamster-wheel-silent.jpg&f=1&nofb=1&ipt=9548a7b96a7c0718076f9c7ae382d86581ce5e79b2c8dff741247f025c815602'
-      ],
-      price: 10.55,
-      location: 'New York Store',
-      categories: ['inverts_enclosures', 'reptiles_enclosures'],
-      longdesc: 'The most suitable enclosures for many invertebrates, reptiles and some amphibians. Perfect also for a growth terrarium where your pet can grow to adulthood and then upgrade to a more suitable enclosure.',
-      amount: 1,
-	  external: false,
-	  email: 'e',
-	  phone: '4',
-	  shipment: true
-    },
-    '002-InvertNest': {
-      id: '002',
-      name: 'Fun Hamster Wheel',
-      company: 'RodentFun',
-      desc: 'A durable wheel for small rodents to stay active.',
-      img: [
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-cdn.ubuy.co.in%2F63697361d0fcb11e6537d1d8-bucatstate-hamster-wheel-silent.jpg&f=1&nofb=1&ipt=9548a7b96a7c0718076f9c7ae382d86581ce5e79b2c8dff741247f025c815602'
-      ],
-      price: 14.99,
-      location: 'Tallinn',
-      categories: ['rodents_toys', 'inverts_decorations', 'featured'],
-      longdesc: 'Great wheel for many small rodents which is made of wood. It does get worn over time but is very very quiet and easy to use for your partner rodent.',
-      amount: 15,
-	  external: false,
-	  email: 'e',
-	  phone: '4',
-	  shipment: true
-    },
-    '003-InvertNest': {
-      id: '003',
+    '001-InvertNest': {
+      id: '001',
       name: '181 Liitrine Akvaarium',
       company: 'InvertNest',
       desc: '181 Liitrine Akvaarium erinevatele loomadele',
@@ -59,6 +24,119 @@ document.addEventListener("DOMContentLoaded", function () {
 	  email: 'e',
 	  phone: '4',
 	  shipment: false
+    },
+	'002-InvertNest': {
+      id: '002',
+      name: 'Steriliseeritud Männikäbid 750 ml',
+      company: 'InvertNest',
+      desc: 'Turvalised männikäbid dekoratsioonina',
+      img: [
+        'https://i.ibb.co/HTt9xyf6/m-nd-peal.jpg',
+		'https://i.ibb.co/0jS03vsv/m-nd-k-rval.jpg'
+      ],
+      price: 5,
+      location: 'Tallinn',
+      categories: ['inverts_decorations', 'reptiles_decorations', 'amphibians_decorations', 'rodents_toys'],
+      longdesc: `Männikäbide dekoratsioon paljude loomade kodudesse. Männikäbid on ka sooja veega üle pestud ning ka ahjus hoitud 50 minutit 95 kraadi juures, tagades loomade ja terraariumite turvalisust nendega.`,
+      amount: 8,
+	  external: false,
+	  email: 'e',
+	  phone: '4',
+	  shipment: true
+    },
+	'003-InvertNest': {
+      id: '003',
+      name: 'Koralli Kaktus',
+      company: 'InvertNest',
+      desc: 'Elus-taim dekoratsioon paljudesse kuivadesse loomade terraariumitesse',
+      img: [
+        'https://i.ibb.co/Lz87M56M/koralli-kaktus.jpg'
+      ],
+      price: 8,
+      location: 'Tallinn',
+      categories: ['inverts_decorations', 'reptiles_decorations', 'featured'],
+      longdesc: `ELus koralli kaktuse dekoratsioon, sobiv ainult kuivadesse terraariumitesse ja vivaariumitesse, kuna koralli kaktusel on vaja kuiva keskkona kus vett saab ainult kord nädalas, võib-olla isegi vöhem. Taime väikses potis on kookose kiu ja muude substraatide segu.`,
+      amount: 1,
+	  external: false,
+	  email: 'e',
+	  phone: '4',
+	  shipment: true
+    },
+	'004-InvertNest': {
+      id: '004',
+      name: 'Biokaktiivne Sammal 800 ml',
+      company: 'InvertNest',
+      desc: 'Bioaktiivne ja elus sammal, 800 ml',
+      img: [
+        'https://i.ibb.co/zHsp9mP0/sammal-peal.jpg',
+		'https://i.ibb.co/Cp4fxvCt/sammal-k-rval.jpg'
+      ],
+      price: 5,
+      location: 'Tallinn',
+      categories: ['inverts_decorations', 'reptiles_decorations', 'amphibians_decorations'],
+      longdesc: `Bioaktiivne puhas ning elus sammal loomade terraariumitesse ja vivaariumitesse, ilus dekoratsioon mis hakkab õigete tingimustega kasvama ka.`,
+      amount: 9,
+	  external: false,
+	  email: 'e',
+	  phone: '4',
+	  shipment: true
+    },
+	'005-InvertNest': {
+      id: '005',
+      name: 'Dinosauruse Luu Dekoratsioon',
+      company: 'InvertNest',
+      desc: 'Ilus Dekoratsioon Paljudesse Terraariumitesse',
+      img: [
+        'https://i.ibb.co/RkL8H3RP/showcasebone.png',
+		'https://i.ibb.co/7JYN8s0r/bone1.png',
+		'https://i.ibb.co/Ng3gPSSM/bone2.png'
+      ],
+      price: 7.50,
+      location: 'Tallinn',
+      categories: ['inverts_decorations', 'reptiles_decorations', 'amphibians_decorations', 'fish_aquascaping'],
+      longdesc: `Ilus ning puhas dinosauruse pealuu, mis sobib paljudesse ilusatesse terraariumitesse. Toode on turvaline loomadele ning on piisavalt raske, et ka kasutada akvaariumites`,
+      amount: 1,
+	  external: false,
+	  email: 'e',
+	  phone: '4',
+	  shipment: true
+    },
+  	'006-InvertNest': {
+      id: '006',
+      name: 'Proteiini Toit 170g',
+      company: 'InvertNest',
+      desc: 'Proteiini segu loomadele',
+      img: [
+        'https://i.ibb.co/hxcCdy5Q/proteinmix.png'
+      ],
+      price: 6.50,
+      location: 'Tallinn',
+      categories: ['inverts_food', 'reptiles_food'],
+      longdesc: `Proteiini segu mis sobib toita paljudele selgrootutele kui ka koos päris toiduga mõnedele roomajatele`,
+      amount: 1,
+	  external: false,
+	  email: 'e',
+	  phone: '4',
+	  shipment: true
+    },
+	'007-InvertNest': {
+      id: '007',
+      name: 'Lehekõdu KOLLANE 750ml',
+      company: 'InvertNest',
+      desc: 'Kollane lehekõdu dekoratsioon kui ka toit!',
+      img: [
+        'https://i.ibb.co/1JBXfGLv/lehek-dupeal.png',
+		'https://i.ibb.co/gFTvjVWr/lehek-duk-rval.png'
+      ],
+      price: 5,
+      location: 'Tallinn',
+      categories: ['inverts_decorations', 'reptiles_decorations', 'rodents_toys'],
+      longdesc: `Kollane lehekõdu sobiv kas lihtsa dekoratsioonina terraariumitesse või ka toiduna mõnedele detrivooridele`,
+      amount: 3,
+	  external: false,
+	  email: 'e',
+	  phone: '4',
+	  shipment: true
     },
   };
 
@@ -238,7 +316,7 @@ if (p.external) {
   document.getElementById('prod-name').textContent = p.name;
   document.getElementById('prod-company').textContent = p.company;
   document.getElementById('form-product').value = p.name;
-//  document.getElementById('btn-name').textContent = p.name;
+  document.getElementById('btn-name').textContent = p.name;
   document.getElementById('prod-longdesc').textContent = p.longdesc || '';
 
   let priceElem = document.getElementById('prod-price');
@@ -249,7 +327,7 @@ if (p.external) {
     priceElem.style.marginTop = '0.5rem';
     document.querySelector('.banner').appendChild(priceElem);
   }
-  priceElem.textContent = `Price: €${p.price.toFixed(2)}`;
+  priceElem.textContent = `Hind: €${p.price.toFixed(2)}`;
 
   let locationElem = document.getElementById('prod-location');
   if (!locationElem) {
@@ -258,21 +336,7 @@ if (p.external) {
     locationElem.style.marginTop = '0.25rem';
     document.querySelector('.banner').appendChild(locationElem);
   }
-  locationElem.textContent = `Location: ${p.location}`;
-
-  if (!document.getElementById('form-location')) {
-    const locationLabel = document.createElement('label');
-    locationLabel.textContent = 'Location: ';
-    const locationInput = document.createElement('input');
-    locationInput.type = 'text';
-    locationInput.name = 'user_location';
-    locationInput.id = 'form-location';
-    locationInput.required = true;
-    locationInput.placeholder = 'Enter your location for shipping/pickup';
-    locationLabel.appendChild(locationInput);
-    const form = document.getElementById('order-form');
-    form.insertBefore(locationLabel, form.lastElementChild);
-  }
+  locationElem.textContent = `Asukoht: ${p.location}`;
 
 
 
@@ -292,7 +356,7 @@ function updatePrices() {
     unitPrice.textContent = `€${p.price.toFixed(2)} x ${quantity} = €${price.toFixed(2)}`;
     shippingPrice.textContent = '-';
     totalPrice.textContent = `€${price.toFixed(2)}`;
-    shippingLabel.textContent = 'Shipping not available for this product';
+//    shippingLabel.textContent = 'Tellimine pole võimalik selle tootega';
     return;
   }
 
@@ -309,9 +373,9 @@ function updatePrices() {
     shippingLabel.textContent = 'Shipping unavailable to your location';
     orderButton.disabled = true;
   } else {
-    shippingLabel.textContent = 'Shipping cost:';
+    shippingLabel.textContent = 'Tellimise hind:';
     orderButton.disabled = false;
-    orderButton.textContent = 'Order Now';
+    orderButton.textContent = 'Telli';
   }
 }
 
@@ -333,7 +397,7 @@ function updatePrices() {
     }
 
     orderButton.disabled = true;
-    orderButton.textContent = 'Ordering...';
+    orderButton.textContent = 'Tellimine...';
 
     const templateParams = {
       from_name: form.user_email.value,
@@ -353,7 +417,7 @@ function updatePrices() {
     emailjs.send('service_j9n1vhx', 'template_gyqiz92', templateParams)
       .then(() => {
         window.open('order_confirmed.html', '_self');
-        orderButton.textContent = 'Order';
+        orderButton.textContent = 'Telli';
         orderButton.disabled = false;
         form.reset();
         shippingLabel.textContent = '';
@@ -362,7 +426,7 @@ function updatePrices() {
       }, (error) => {
         alert("Failed to send order. Please try again later.");
         orderButton.disabled = false;
-        orderButton.textContent = 'Order';
+        orderButton.textContent = 'Telli';
         console.error(error);
       });
   });

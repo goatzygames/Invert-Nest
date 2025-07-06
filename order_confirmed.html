@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Order Confirmed</title>
+  <title>Invert Nest</title>
+
+  <link rel="icon" href="imgs/nest.png" type="image/png">
   <style>
     /* Reset & Base */
     * {
@@ -88,11 +90,133 @@
 </head>
 <body>
   <div class="confirmation-box">
-    <h1>Order Confirmed</h1>
-    <p>
-      Thank you for your purchase! Your order is now being processed. You will receive an email, where you can pay for your order, so I can send it out.<br>You may be contacted
+    <h1 data-i18n="conf_1">Tellimus kinnitatud</h1>
+    <p data-i18n="conf_2">
+      Täname ostu eest! Teie tellimus töödeldakse. Saate e-kirja, kus saate tellimuse eest maksta, et saaksin selle välja saata.<br>Teiega võidakse ühendust võtta
     </p>
-    <a href="index.html">Return to Home</a>
+    <a href="index.html" data-i18n="conf_3">Tagasi Avalehele</a>
   </div>
+  
+    <script>
+    const translations = {
+      en: {
+        invertebrates: "Invertebrates",
+		amphibians: "Amphibians",
+		rodents: "Rodents",
+		reptiles: "Reptiles",
+		birds: "Birds",
+		fish: "Fish",
+        enclosures: "Enclosures",
+        decorations: "Decorations",
+        foodNutrition: "Food & Nutrition",
+        unitPrice: "Unit Price:",
+        shipping: "Shipping:",
+        total: "Total:",
+        quantity: "Quantity:",
+        email: "Email:",
+        phone: "Phone:",
+        country: "Country:",
+        selectCountry: "Select Country",
+        address: "Address:",
+        message: "Message:",
+		terrariums: "Terrariums",
+	    decorations: "Decorations",
+		food: "Food",
+		cages: "Cages",
+		toys: "Toys",
+		aquariums: "Aquariums",
+		aquarium_decorations: "Aquascaping",
+		cages_and_bird_cages: "Cages and Bird Houses",
+		perches_and_toys: "Perches and Toys",
+		seeds_and_feeders: "Seeds and Feeders",
+		habitats: "Habitats",
+		conf_1: "Order Confirmed",
+		conf_2: "Thank you for your purchase! Your order is now being processed. You will receive an email, where you can pay for your order, so I can send it out.<br>You may be contacted",
+		conf_3: "Return to Home"
+
+
+      },
+      ru: {
+        invertebrates: "Беспозвоночные",
+        enclosures: "Террариумы",
+		amphibians: "Амфибии",
+		rodents: "Грызуны",
+		reptiles: "Рептилии",
+		birds: "Птицы",
+		fish: "Рыбы",
+        decorations: "Украшения",
+        foodNutrition: "Питание",
+        unitPrice: "Цена за единицу:",
+        shipping: "Доставка:",
+        total: "Итого:",
+        quantity: "Количество:",
+        email: "Почта:",
+        phone: "Телефон:",
+        country: "Страна:",
+        selectCountry: "Выберите страну",
+        address: "Адрес:",
+        message: "Сообщение:",
+		terrariums: "Террариумы",
+		decorations: "Декорации",
+		food: "Корм",
+		cages: "Клетки",
+		toys: "Игрушки",
+		aquariums: "Аквариумы",
+		aquarium_decorations: "Оформление аквариума",
+		cages_and_bird_cages: "Клетки и Домики для птиц",
+		perches_and_toys: "Жердочки и Игрушки",
+		seeds_and_feeders: "Семена и Кормушки",
+		habitats: "Среда обитания",
+		conf_1: "Заказ подтвержден",
+		conf_2: "Спасибо за покупку! Ваш заказ обрабатывается. Вы получите электронное письмо, где сможете оплатить заказ, чтобы я мог его отправить.<br>Возможно, с вами свяжутся",
+		conf_3: "Вернуться на главную"
+
+
+      }
+      // Estonian is default, so no need to translate
+    };
+
+    function applyTranslations(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (lang !== "et" && translations[lang] && translations[lang][key]) {
+  el.textContent = translations[lang][key];
+} else if (lang === "et") {
+  // Restore Estonian from a data-original attribute
+  if (el.dataset.original) {
+    el.textContent = el.dataset.original;
+  }
+}
+
+      });
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      applyTranslations(lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang;
+        setLanguage(lang);
+	    location.reload();
+      });
+    });
+
+    // On page load
+    const savedLang = localStorage.getItem("lang") || "et";
+    applyTranslations(savedLang);
+
+// Store original Estonian text for restoring later
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  if (!el.dataset.original) {
+    el.dataset.original = el.textContent;
+  }
+});
+
+
+
+  </script>
 </body>
 </html>

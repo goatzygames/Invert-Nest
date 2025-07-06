@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Exotic Animal Shop</title>
+  <title>Invert Nest</title>
+  <link rel="icon" href="imgs/nest.png" type="image/png">
   <link rel="stylesheet" href="css/css.css" />
 </head>
 <body>
+<script>
+  function toggleMenu() {
+    document.querySelector('.navbar').classList.toggle('show');
+  }
+</script>
 
 <!-- Beta version warning -->
 <div id="beta-modal" class="beta-modal hidden">
@@ -82,55 +88,59 @@
     </button>
   </div>
   <nav class="navbar">
-    <div class="logo" data-i18n="logo">Invert Nest 
+
+<div class="logo" data-i18n="logo">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <span>Invert Nest</span>
 </div>
+
     <ul class="nav-links">
       <li class="dropdown">
-        <a href="#" data-i18n="invertebrates">Invertebrates</a>
+        <a href="#" data-i18n="invertebrates">Selgrootud</a>
         <ul class="dropdown-menu">
-          <li><a href="inverts_enclosures.html" data-i18n="enclosures">Enclosures</a></li>
-          <li><a href="inverts_decorations.html" data-i18n="decorations">Decorations</a></li>
-          <li><a href="inverts_food.html" data-i18n="foodNutrition">Food & Nutrition</a></li>
+          <li><a href="inverts_enclosures.html" data-i18n="enclosures">Terraariumid</a></li>
+          <li><a href="inverts_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="inverts_food.html" data-i18n="foodNutrition">Toit ja Toitumine</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#" data-i18n="rodents">Rodents</a>
+        <a href="#" data-i18n="rodents">Närilised</a>
         <ul class="dropdown-menu">
-          <li><a href="rodents_enclosures.html" data-i18n="cages">Cages</a></li>
-          <li><a href="rodents_toys.html" data-i18n="toys">Toys</a></li>
-          <li><a href="rodents_food.html" data-i18n="food">Food</a></li>
+          <li><a href="rodents_enclosures.html" data-i18n="cages">Puurid</a></li>
+          <li><a href="rodents_toys.html" data-i18n="toys">Mänguasjad</a></li>
+          <li><a href="rodents_food.html" data-i18n="food">Toit</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#" data-i18n="fish">Fish</a>
+        <a href="#" data-i18n="fish">Kalad</a>
         <ul class="dropdown-menu">
-          <li><a href="fish_enclosures.html" data-i18n="tanksStands">Tanks & Stands</a></li>
-          <li><a href="fish_aquascaping.html" data-i18n="aquascaping">Aquascaping</a></li>
-          <li><a href="fish_food.html" data-i18n="flakePelletFood">Flake & Pellet Food</a></li>
+          <li><a href="fish_enclosures.html" data-i18n="tanksStands">Akvaariumid ja Alused</a></li>
+          <li><a href="fish_aquascaping.html" data-i18n="aquascaping">Akvaariumi Sisustused</a></li>
+          <li><a href="fish_food.html" data-i18n="flakePelletFood">Toit ja Toitumine</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#" data-i18n="reptiles">Reptiles</a>
+        <a href="#" data-i18n="reptiles">Roomajad</a>
         <ul class="dropdown-menu">
-          <li><a href="reptiles_enclosures.html" data-i18n="terrariums">Terrariums</a></li>
-          <li><a href="reptiles_decorations.html" data-i18n="decorations">Decorations</a></li>
-          <li><a href="reptiles_food.html" data-i18n="foodSupplements">Food & Supplements</a></li>
+          <li><a href="reptiles_enclosures.html" data-i18n="terrariums">Terraariumid</a></li>
+          <li><a href="reptiles_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="reptiles_food.html" data-i18n="foodSupplements">Toit ja Toitumine</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#" data-i18n="amphibians">Amphibians</a>
+        <a href="#" data-i18n="amphibians">Kahepaiksed</a>
         <ul class="dropdown-menu">
-          <li><a href="amphibians_enclosures.html" data-i18n="habitats">Habitats</a></li>
-          <li><a href="amphibians_decorations.html" data-i18n="decorations">Decorations</a></li>
-          <li><a href="amphibians_food.html" data-i18n="dietNutrition">Diet & Nutrition</a></li>
+          <li><a href="amphibians_enclosures.html" data-i18n="habitats">Elupaigad</a></li>
+          <li><a href="amphibians_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="amphibians_food.html" data-i18n="dietNutrition">Toit ja Toitumine</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#" data-i18n="birds">Birds</a>
+        <a href="#" data-i18n="birds">Linnud</a>
         <ul class="dropdown-menu">
-          <li><a href="birds_cages.html" data-i18n="cagesAviaries">Cages & Aviaries</a></li>
-          <li><a href="birds_perches.html" data-i18n="perchesToys">Perches & Toys</a></li>
-          <li><a href="birds_food.html" data-i18n="seedsFeeders">Seeds & Feeders</a></li>
+          <li><a href="birds_cages.html" data-i18n="cagesAviaries">Puurid ja Linnumajad</a></li>
+          <li><a href="birds_perches.html" data-i18n="perchesToys">Õrred ja Mänguasjad</a></li>
+          <li><a href="birds_food.html" data-i18n="seedsFeeders">Seemned ja Söötjad</a></li>
         </ul>
       </li>
     </ul>
@@ -138,14 +148,14 @@
 
   <section class="hero">
     <div class="banner">
-      <h1 data-i18n="bannerTitle">Customize for Your Pet Type!</h1>
-      <p data-i18n="bannerDesc">Change this banner text and image to match each category’s vibe.</p>
+      <h1 data-i18n="best_choice_natural_products">Parim Valik Naturaalseid Tooteid Su Loomadele!</h1>
+      <p data-i18n="all_different_natural_products">Siin on kõik erinevad naturaalsed tooted Sinu loomadele!</p>
     </div>
   </section>
   
   <div class="featured-box">
-  <h2>🌿 Featured Products</h2>
-  <p>Discover our 2 hand-picked items of the week, specially selected for their quality and charm.</p>
+  <h2 data-i18n="featured_products">🌿 Esiletõstetud Tooted</h2>
+  <p data-i18n="look_at_our_featured_products">Avasta meie kaks nädala hoolikalt valitud toodet, mis on spetsiaalselt välja valitud kvaliteedi ja sarmikuse välimuse poolest.</p>
     <!-- Featured Products -->
 <section class="products" id="product-list">
   <!-- Products will be inserted here dynamically -->
@@ -191,55 +201,55 @@ window.addEventListener('DOMContentLoaded', () => {
 <div>
   <section class="submit-product-section container">
     <div class="hero banner">
-      <h1>Submit a New Product</h1>
-      <p>Have something awesome to add? Let us know and we'll check it out!</p>
+      <h1 data-i18n="add_your_product">Lisa oma Toode</h1>
+      <p data-i18n="add_your_product_nb">NB! Ei tööta praegu!<br><br>On sul midagi millest soovid lahti saada? Esita oma kuulutus ning paneme selle siia üles!</p>
     </div>
 
     <form action="https://formspree.io/f/mdkzvnao" method="POST">
       <!-- Product Name -->
       <div class="field">
-        <label for="name" class="label">Product Name</label>
+        <label for="name" class="label" data-i18n="product_name">Toote Nimi</label>
         <div class="control">
-          <input class="input" type="text" name="name" id="name" placeholder="e.g. Eco Plant Pot" required>
+          <input class="input" type="text" name="name" id="name" placeholder="Selgrootu Terraarium" required>
         </div>
       </div>
 
       <!-- Category -->
       <div class="field">
-        <label for="category" class="label">Category</label>
+        <label for="category" class="label" data-i18n="category_trans">Kategooria</label>
         <div class="control">
           <div class="select is-fullwidth">
             <select name="category" id="category" required>
-              <option value="" disabled selected>Select a category</option>
-              <optgroup label="Invertebrates">
-                <option value="Invertebrates Enclosures">Enclosures</option>
-                <option value="Invertebrates Decorations">Decorations</option>
-                <option value="Invertebrates Food">Food</option>
+              <option value="" disabled selected >Vali Kategooria</option>
+              <optgroup label="Selgrootud">
+                <option value="Invertebrates Enclosures" data-i18n="terrariums">Terraariumid</option>
+                <option value="Invertebrates Decorations" data-i18n="decorations">Sisustus</option>
+                <option value="Invertebrates Food" data-i18n="food">Toit</option>
               </optgroup>
-              <optgroup label="Rodents">
-                <option value="Rodents Enclosures">Enclosures</option>
-                <option value="Rodents Food">Food</option>
-                <option value="Rodents Toys">Toys</option>
+              <optgroup label="Närilised">
+                <option value="Rodents Enclosures" data-i18n="cages">Puurid</option>
+                <option value="Rodents Food" data-i18n="food">Toit</option>
+                <option value="Rodents Toys" data-i18n="toys">Mänguasjad</option>
               </optgroup>
-              <optgroup label="Reptiles">
-                <option value="Reptiles Terrariums">Terrariums</option>
-                <option value="Reptiles Decorations">Decorations</option>
-                <option value="Reptiles Food">Food</option>
+              <optgroup label="Roomajad">
+                <option value="Reptiles Terrariums" data-i18n="terrariums">Terraariumid</option>
+                <option value="Reptiles Decorations" data-i18n="decorations">Sisustus</option>
+                <option value="Reptiles Food" data-i18n="food">Toit</option>
               </optgroup>
-              <optgroup label="Fish">
-                <option value="Fish Enclosures">Enclosures</option>
-                <option value="Fish Aquascaping">Aquascaping</option>
-                <option value="Fish Food">Food</option>
+              <optgroup label="Kalad">
+                <option value="Fish Enclosures" data-i18n="aquariums">Akvaariumid</option>
+                <option value="Fish Aquascaping" data-i18n="aquarium_decorations">Akvaariumi Sisustused</option>
+                <option value="Fish Food" data-i18n="food">Toit</option>
               </optgroup>
-              <optgroup label="Birds">
-                <option value="Birds Cages">Cages</option>
-                <option value="Birds Perches">Perches</option>
-                <option value="Birds Food">Food</option>
+              <optgroup label="Linnud">
+                <option value="Birds Cages" data-i18n="cages_and_bird_cages">Puurid ja Linnumajad</option>
+                <option value="Birds Perches" data-i18n="perches_and_toys">Õrred ja Mänguasjad</option>
+                <option value="Birds Food" data-i18n="seeds_and_feeders">Seemned ja Söötjad</option>
               </optgroup>
-              <optgroup label="Amphibians">
-                <option value="Amphibians Enclosures">Enclosures</option>
-                <option value="Amphibians Decorations">Decorations</option>
-                <option value="Amphibians Food">Food</option>
+              <optgroup label="Kahepaiksed">
+                <option value="Amphibians Enclosures" data-i18n="habitats">Elupaigad</option>
+                <option value="Amphibians Decorations" data-i18n="decorations">Sisustus</option>
+                <option value="Amphibians Food" data-i18n="food">Toit</option>
               </optgroup>
             </select>
           </div>
@@ -248,7 +258,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Description -->
       <div class="field">
-        <label for="description" class="label">Description</label>
+        <label for="description" class="label" data-i18n="description">Kirjeldus</label>
         <div class="control">
           <textarea class="textarea" name="description" id="description" required></textarea>
         </div>
@@ -256,7 +266,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Price -->
       <div class="field">
-        <label for="price" class="label">Price (€)</label>
+        <label for="price" class="label" data-i18n="price_eur">Hind (€)</label>
         <div class="control">
           <input class="input" type="number" name="price" id="price" step="0.01" required>
         </div>
@@ -264,7 +274,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Image URL -->
       <div class="field">
-        <label for="image" class="label">Image URL</label>
+        <label for="image" class="label" data-i18n="images_url">Pildi URL</label>
         <div class="control">
           <input class="input" type="url" name="image" id="image" required>
         </div>
@@ -272,7 +282,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Address -->
       <div class="field">
-        <label for="address" class="label">Address</label>
+        <label for="address" class="label" data-i18n="address">Aaddress</label>
         <div class="control">
           <textarea class="textarea" name="address" id="address" placeholder="Your full address" required></textarea>
         </div>
@@ -280,7 +290,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Email -->
       <div class="field">
-        <label for="email" class="label">Email</label>
+        <label for="email" class="label"  data-i18n="email_address">Email</label>
         <div class="control">
           <input class="input" type="email" name="email" id="email" placeholder="you@example.com" required>
         </div>
@@ -288,7 +298,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Phone Number -->
       <div class="field">
-        <label for="phone" class="label">Phone Number</label>
+        <label for="phone" class="label" data-i18n="phone_number">Telefoni Number</label>
         <div class="control">
           <input class="input" type="tel" name="phone" id="phone" placeholder="+123 456 7890">
         </div>
@@ -297,7 +307,7 @@ window.addEventListener('DOMContentLoaded', () => {
       <!-- Submit Button -->
       <div class="field">
         <div class="control">
-          <button class="button is-primary" type="submit">Submit Product</button>
+          <button class="button is-primary" type="submit" data-i18n="submit_product">Esita Toode</button>
         </div>
       </div>
 
@@ -312,23 +322,26 @@ window.addEventListener('DOMContentLoaded', () => {
   
   <section class="contact-section">
   <div class="container">
-    <h2 class="contact-title">Contact Us & Suggest Ideas!</h2>
-    <form id="contact-form" action="https://formspree.io/f/manjzekd" method="POST">
-      <label>
-        Your Email:
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        Your Message:
-        <textarea name="message" rows="6" required></textarea>
-      </label>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+    <h2 class="contact-title" data-i18n="Contact_us_a_offer_ideas">Võtke meiega ühendust & pakkuge ideid!</h2>
+<form id="contact-form" action="https://formspree.io/f/manjzekd" method="POST">
+  <label>
+    <span data-i18n="your_email">Sinu Email:</span>
+    <input type="email" name="email" required>
+  </label>
+
+  <label>
+    <span data-i18n="your_message">Sinu Sõnum:</span>
+    <textarea name="message" rows="6" required></textarea>
+  </label>
+
+  <button type="submit" data-i18n="send_message">Saada Sõnum</button>
+</form>
+
+			</div>
+			</section>
 
     <footer class="footer">
-  <p>© 2025 YourSiteName. All rights reserved.</p>
+  <p>© 2025 Invert Nest EE. All rights reserved.</p>
   <p>
     Made with ❤️ using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript.</a>.
   </p>
@@ -339,92 +352,163 @@ window.addEventListener('DOMContentLoaded', () => {
     <a href="#" aria-label="Instagram">🌱</a>
   </div>
 </footer>
-<script id="translations" type="application/json">
-const translations = {
-  en: {
-    logo: "Invert Nest",
-    invertebrates: "Invertebrates",
-    enclosures: "Enclosures",
-    decorations: "Decorations",
-    foodNutrition: "Food & Nutrition",
-    rodents: "Rodents",
-    cages: "Cages",
-    toys: "Toys",
-    food: "Food",
-    fish: "Fish",
-    tanksStands: "Tanks & Stands",
-    aquascaping: "Aquascaping",
-    flakePelletFood: "Flake & Pellet Food",
-    reptiles: "Reptiles",
-    terrariums: "Terrariums",
-    foodSupplements: "Food & Supplements",
-    amphibians: "Amphibians",
-    habitats: "Habitats",
-    dietNutrition: "Diet & Nutrition",
-    birds: "Birds",
-    cagesAviaries: "Cages & Aviaries",
-    perchesToys: "Perches & Toys",
-    seedsFeeders: "Seeds & Feeders",
-    bannerTitle: "Customize for Your Pet Type!",
-    bannerDesc: "Change this banner text and image to match each category’s vibe.",
-  },
-  et: {
-    logo: "Invert Pesa",
-    invertebrates: "Selgrootud",
-    enclosures: "Terrariumid",
-    decorations: "Dekoratsioonid",
-    foodNutrition: "Toit ja Toitumine",
-    rodents: "Närilised",
-    cages: "Puurid",
-    toys: "Mänguasjad",
-    food: "Toit",
-    fish: "Kalad",
-    tanksStands: "Akvaariumid ja Alused",
-    aquascaping: "Akvaariumikujundus",
-    flakePelletFood: "Helbed ja Graanulid",
-    reptiles: "Roomajad",
-    terrariums: "Terrariumid",
-    foodSupplements: "Toit ja Toidulisandid",
-    amphibians: "Kahepaiksed",
-    habitats: "Elupaigad",
-    dietNutrition: "Toitumine",
-    birds: "Linnud",
-    cagesAviaries: "Puurid ja Linnumajad",
-    perchesToys: "Istumispulgad ja Mänguasjad",
-    seedsFeeders: "Seemned ja Söötjad",
-    bannerTitle: "Kohanda vastavalt oma lemmikule!",
-    bannerDesc: "Muuda see bänner ja pilt igale kategooriale sobivaks.",
-  },
-  ru: {
-    logo: "Гнездо Инвертов",
-    invertebrates: "Беспозвоночные",
-    enclosures: "Террариумы",
-    decorations: "Декорации",
-    foodNutrition: "Питание",
-    rodents: "Грызуны",
-    cages: "Клетки",
-    toys: "Игрушки",
-    food: "Еда",
-    fish: "Рыбы",
-    tanksStands: "Аквариумы и Подставки",
-    aquascaping: "Акваскейпинг",
-    flakePelletFood: "Хлопья и Гранулы",
-    reptiles: "Рептилии",
-    terrariums: "Террариумы",
-    foodSupplements: "Еда и Добавки",
-    amphibians: "Земноводные",
-    habitats: "Среда обитания",
-    dietNutrition: "Диета и Питание",
-    birds: "Птицы",
-    cagesAviaries: "Клетки и Вольеры",
-    perchesToys: "Жёрдочки и Игрушки",
-    seedsFeeders: "Семена и Кормушки",
-    bannerTitle: "Настройте под своего питомца!",
-    bannerDesc: "Измените этот баннер и изображение для каждой категории.",
+
+<script src="js/main.js"></script>
+
+  <!-- Translation Script -->
+  <script>
+    const translations = {
+      en: {
+        invertebrates: "Invertebrates",
+		amphibians: "Amphibians",
+		rodents: "Rodents",
+		reptiles: "Reptiles",
+		birds: "Birds",
+		fish: "Fish",
+        enclosures: "Enclosures",
+        decorations: "Decorations",
+        foodNutrition: "Food & Nutrition",
+        unitPrice: "Unit Price:",
+        shipping: "Shipping:",
+        total: "Total:",
+        quantity: "Quantity:",
+        email: "Email:",
+        phone: "Phone:",
+        country: "Country:",
+        selectCountry: "Select Country",
+        address: "Address:",
+        message: "Message:",
+		terrariums: "Terrariums",
+	    decorations: "Decorations",
+		food: "Food",
+		cages: "Cages",
+		toys: "Toys",
+		aquariums: "Aquariums",
+		aquarium_decorations: "Aquascaping",
+		cages_and_bird_cages: "Cages and Bird Houses",
+		perches_and_toys: "Perches and Toys",
+		seeds_and_feeders: "Seeds and Feeders",
+		habitats: "Habitats",
+	    Contact_us_a_offer_ideas: "Contact Us & Offer Ideas!",
+		your_email: "Your Email:",
+		your_message: "Your Message:",
+		send_message: "Send Message",
+		best_choice_natural_products: "Best Choice of Natural Products for Your Pets!",
+		all_different_natural_products: "Here you'll find all kinds of natural products for your animals!",
+	    featured_products: "🌿 Featured Products",
+		look_at_our_featured_products: "Discover our two carefully selected products of the week, chosen for their quality and charming appearance.",
+		description: "Description",
+		price_eur: "Price (€)",
+		images_url: "Image URL",
+		address: "Address",
+		email_address: "Email",
+		phone_number: "Phone Number",
+		submit_product: "Submit Product",
+		add_your_product: "Submit Your Product",
+		add_your_product_nb: "NB! Doesn't work currently!\n \nSubmit your animal supplies here which you would want to sell!",
+		category_trans: "Category",
+		product_name: "Product Name"
+
+
+      },
+      ru: {
+        invertebrates: "Беспозвоночные",
+        enclosures: "Террариумы",
+		amphibians: "Амфибии",
+		rodents: "Грызуны",
+		reptiles: "Рептилии",
+		birds: "Птицы",
+		fish: "Рыбы",
+        decorations: "Украшения",
+        foodNutrition: "Питание",
+        unitPrice: "Цена за единицу:",
+        shipping: "Доставка:",
+        total: "Итого:",
+        quantity: "Количество:",
+        email: "Почта:",
+        phone: "Телефон:",
+        country: "Страна:",
+        selectCountry: "Выберите страну",
+        address: "Адрес:",
+        message: "Сообщение:",
+		terrariums: "Террариумы",
+		decorations: "Декорации",
+		food: "Корм",
+		cages: "Клетки",
+		toys: "Игрушки",
+		aquariums: "Аквариумы",
+		aquarium_decorations: "Оформление аквариума",
+		cages_and_bird_cages: "Клетки и Домики для птиц",
+		perches_and_toys: "Жердочки и Игрушки",
+		seeds_and_feeders: "Семена и Кормушки",
+		habitats: "Среда обитания",
+		Contact_us_a_offer_ideas: "Свяжитесь с нами и предложите идеи!",
+		your_email: "Ваш Email:",
+		your_message: "Ваше Сообщение:",
+		send_message: "Отправить Сообщение",
+		best_choice_natural_products: "Лучший выбор натуральных продуктов для ваших питомцев!",
+		all_different_natural_products: "Здесь вы найдете все виды натуральных товаров для ваших животных!",
+	    featured_products: "🌿 Рекомендуемые товары",
+		look_at_our_featured_products: "Откройте для себя два тщательно отобранных товара недели, выбранных за их качество и привлекательный внешний вид.",
+		description: "Описание",
+		price_eur: "Цена (€)",
+		images_url: "URL изображения",
+		address: "Адрес",
+		email_address: "Электронная почта",
+		phone_number: "Номер телефона",
+		submit_product: "Отправить товар",
+		submit_product: "Отправить товар",
+		add_your_product: "Отправьте ваш товар",
+		add_your_product_nb: "Внимание! Сейчас не работает!\n \nЕсть что-то, от чего вы хотите избавиться? Отправьте свое объявление, и мы разместим его здесь!",
+		category_trans: "Категория",
+		product_name: "Название товара"
+
+      }
+      // Estonian is default, so no need to translate
+    };
+
+    function applyTranslations(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (lang !== "et" && translations[lang] && translations[lang][key]) {
+  el.textContent = translations[lang][key];
+} else if (lang === "et") {
+  // Restore Estonian from a data-original attribute
+  if (el.dataset.original) {
+    el.textContent = el.dataset.original;
   }
-};
-</script>
-<script src="js/language.js"></script>
+}
+
+      });
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      applyTranslations(lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang;
+        setLanguage(lang);
+	    location.reload();
+      });
+    });
+
+    // On page load
+    const savedLang = localStorage.getItem("lang") || "et";
+    applyTranslations(savedLang);
+
+// Store original Estonian text for restoring later
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  if (!el.dataset.original) {
+    el.dataset.original = el.textContent;
+  }
+});
+
+
+
+  </script>
 
 </body>
 </html>

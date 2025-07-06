@@ -1,72 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Details</title>
+  <link rel="icon" href="imgs/nest.png" type="image/png">
   <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
+  <!-- Language Switcher -->
   <div class="lang-switcher">
-    <button class="lang-btn" data-lang="et">
-      <img src="imgs/estonianflag.jpg" alt="Estonian">
-    </button>
-    <button class="lang-btn" data-lang="en">
-      <img src="imgs/britishflag.jpg" alt="English">
-    </button>
-    <button class="lang-btn" data-lang="ru">
-      <img src="imgs/russianflag.jpg" alt="Russian">
-    </button>
+    <button class="lang-btn" data-lang="et"><img src="imgs/estonianflag.jpg" alt="Estonian"></button>
+    <button class="lang-btn" data-lang="en"><img src="imgs/britishflag.jpg" alt="English"></button>
+    <button class="lang-btn" data-lang="ru"><img src="imgs/russianflag.jpg" alt="Russian"></button>
   </div>
+
+  <!-- Navigation -->
   <nav class="navbar">
-    <div class="logo">Invert Nest</div>
+    <div class="logo">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <span>Invert Nest</span>
+    </div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown"><a href="#">Invertebrates</a>
+	<a href="index.html" data-i18n="homepage">Koduleht</a>
+      <li class="dropdown">
+        <a href="#" data-i18n="invertebrates">Selgrootud</a>
         <ul class="dropdown-menu">
-          <li><a href="inverts_enclosures.html">Enclosures</a></li>
-          <li><a href="inverts_decorations.html">Decorations</a></li>
-          <li><a href="inverts_food.html">Food & Nutrition</a></li>
+          <li><a href="inverts_enclosures.html" data-i18n="enclosures">Terraariumid</a></li>
+          <li><a href="inverts_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="inverts_food.html" data-i18n="foodNutrition">Toit ja Toitumine</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="#">Rodents</a>
+            <li class="dropdown">
+        <a href="#" data-i18n="rodents">Närilised</a>
         <ul class="dropdown-menu">
-          <li><a href="rodents_enclosures.html">Cages</a></li>
-          <li><a href="rodents_toys.html">Toys</a></li>
-          <li><a href="rodents_food.html">Food</a></li>
+          <li><a href="rodents_enclosures.html" data-i18n="cages">Puurid</a></li>
+          <li><a href="rodents_toys.html" data-i18n="toys">Mänguasjad</a></li>
+          <li><a href="rodents_food.html" data-i18n="food">Toit</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="#">Fish</a>
+      <li class="dropdown">
+        <a href="#" data-i18n="fish">Kalad</a>
         <ul class="dropdown-menu">
-          <li><a href="fish_enclosures.html">Tanks & Stands</a></li>
-          <li><a href="fish_aquascaping.html">Aquascaping</a></li>
-          <li><a href="fish_food.html">Flake & Pellet Food</a></li>
+          <li><a href="fish_enclosures.html" data-i18n="tanksStands">Akvaariumid ja Alused</a></li>
+          <li><a href="fish_aquascaping.html" data-i18n="aquascaping">Akvaariumi Sisustused</a></li>
+          <li><a href="fish_food.html" data-i18n="flakePelletFood">Toit ja Toitumine</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="#">Reptiles</a>
+      <li class="dropdown">
+        <a href="#" data-i18n="reptiles">Roomajad</a>
         <ul class="dropdown-menu">
-          <li><a href="reptiles_enclosures.html">Terrariums</a></li>
-          <li><a href="reptiles_decorations.html">Decorations</a></li>
-          <li><a href="reptiles_food.html">Food & Supplements</a></li>
+          <li><a href="reptiles_enclosures.html" data-i18n="terrariums">Terraariumid</a></li>
+          <li><a href="reptiles_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="reptiles_food.html" data-i18n="foodSupplements">Toit ja Toitumine</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="#">Amphibians</a>
+      <li class="dropdown">
+        <a href="#" data-i18n="amphibians">Kahepaiksed</a>
         <ul class="dropdown-menu">
-          <li><a href="amphibians_enclosures.html">Habitats</a></li>
-          <li><a href="amphibians_decorations.html">Decorations</a></li>
-          <li><a href="amphibians_food.html">Diet & Nutrition</a></li>
+          <li><a href="amphibians_enclosures.html" data-i18n="habitats">Elupaigad</a></li>
+          <li><a href="amphibians_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="amphibians_food.html" data-i18n="dietNutrition">Toit ja Toitumine</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="#">Birds</a>
+      <li class="dropdown">
+        <a href="#" data-i18n="birds">Linnud</a>
         <ul class="dropdown-menu">
-          <li><a href="birds_cages.html">Cages & Aviaries</a></li>
-          <li><a href="birds_perches.html">Perches & Toys</a></li>
-          <li><a href="birds_food.html">Seeds & Feeders</a></li>
+          <li><a href="birds_cages.html" data-i18n="cagesAviaries">Puurid ja Linnumajad</a></li>
+          <li><a href="birds_perches.html" data-i18n="perchesToys">Õrred ja Mänguasjad</a></li>
+          <li><a href="birds_food.html" data-i18n="seedsFeeders">Seemned ja Söötjad</a></li>
         </ul>
       </li>
     </ul>
   </nav>
 
+  <!-- Product Page -->
   <div class="container product-page">
     <div class="hero">
       <div class="banner">
@@ -74,197 +82,257 @@
         <p id="prod-company">Company Name</p>
       </div>
     </div>
+    
     <div class="products" style="grid-template-columns: 1fr; gap: 2rem; padding: 2rem 0;">
- <div class="product-card" style="display: flex; gap: 2rem; align-items: flex-start;">
-  <div style="flex: 2; display: flex; flex-direction: column;">
-    <img id="prod-img" src="" alt="Product Image" style="width: 100%; max-width: 500px; border-radius: 12px; object-fit: contain;">
-    <p id="prod-longdesc" style="margin-top: 2rem;">Product description goes here.</p>
-	
-	<div id="price-info" style="margin-top: 1rem; font-size: 1.1rem; font-weight: 500; background: #f1f1f1; padding: 1rem; border-radius: 12px;">
-  <p>Unit Price: <span id="unit-price">€0.00</span></p>
-  <p>Shipping: <span id="shipping-price">€0.00</span></p>
-  <p><strong>Total: <span id="total-price">€0.00</span></strong></p>
-</div>
+      <div class="product-card" style="display: flex; gap: 2rem; align-items: flex-start;">
+        
+        <!-- Left Column -->
+        <div style="flex: 2; display: flex; flex-direction: column;">
+          <img id="prod-img" src="" alt="Product Image" style="width: 100%; max-width: 500px; border-radius: 12px; object-fit: contain;">
+          <p id="prod-longdesc" style="margin-top: 2rem;">Product description goes here.</p>
 
-  </div>
-  <form id="order-form" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; max-width: 400px;">
-    <input type="hidden" name="product" id="form-product">
-    <label>Quantity: <input type="number" name="quantity" id="form-quantity" min="1" value="1"></label>
-    <label>Email: <input type="email" name="user_email" required></label>
-    <label>Phone: <input type="tel" name="user_phone" required></label>
-<label for="country-select" style="font-weight: bold; margin-top: 1rem;">
-  Destination Country:
-</label>
-<select name="country" id="country-select" required style="
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border-radius: 12px;
-  border: 1.5px solid #888;
-  background-color: #f9f9f9;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: border-color 0.3s ease;
-  appearance: none;
-  cursor: pointer;
-">
-  <option value="" disabled selected>Select country</option>
-  <option value="Albania">Albania</option>
-  <option value="Andorra">Andorra</option>
-  <option value="Austria">Austria</option>
-  <option value="Belarus">Belarus</option>
-  <option value="Belgium">Belgium</option>
-  <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-  <option value="Bulgaria">Bulgaria</option>
-  <option value="Croatia">Croatia</option>
-  <option value="Cyprus">Cyprus</option>
-  <option value="Czech Republic">Czech Republic</option>
-  <option value="Denmark">Denmark</option>
-  <option value="Estonia">Estonia</option>
-  <option value="Finland">Finland</option>
-  <option value="France">France</option>
-  <option value="Germany">Germany</option>
-  <option value="Greece">Greece</option>
-  <option value="Hungary">Hungary</option>
-  <option value="Iceland">Iceland</option>
-  <option value="Ireland">Ireland</option>
-  <option value="Italy">Italy</option>
-  <option value="Kosovo">Kosovo</option>
-  <option value="Latvia">Latvia</option>
-  <option value="Liechtenstein">Liechtenstein</option>
-  <option value="Lithuania">Lithuania</option>
-  <option value="Luxembourg">Luxembourg</option>
-  <option value="Malta">Malta</option>
-  <option value="Moldova">Moldova</option>
-  <option value="Monaco">Monaco</option>
-  <option value="Montenegro">Montenegro</option>
-  <option value="Netherlands">Netherlands</option>
-  <option value="North Macedonia">North Macedonia</option>
-  <option value="Norway">Norway</option>
-  <option value="Poland">Poland</option>
-  <option value="Portugal">Portugal</option>
-  <option value="Romania">Romania</option>
-  <option value="Russia">Russia</option>
-  <option value="San Marino">San Marino</option>
-  <option value="Serbia">Serbia</option>
-  <option value="Slovakia">Slovakia</option>
-  <option value="Slovenia">Slovenia</option>
-  <option value="Spain">Spain</option>
-  <option value="Sweden">Sweden</option>
-  <option value="Switzerland">Switzerland</option>
-  <option value="Turkey">Turkey</option>
-  <option value="Ukraine">Ukraine</option>
-  <option value="United Kingdom">United Kingdom</option>
-  <option value="Vatican City">Vatican City</option>
-</select>
+          <div id="price-info" style="margin-top: 1rem; font-size: 1.1rem; font-weight: 500; background: #f1f1f1; padding: 1rem; border-radius: 12px;">
+            <p><span data-i18n="unitPrice">Unit Price:</span> <span id="unit-price">€0.00</span></p>
+            <p><span data-i18n="shipping">Shipping:</span> <span id="shipping-price">€0.00</span></p>
+            <p><strong><span data-i18n="total">Total:</span> <span id="total-price">€0.00</span></strong></p>
+          </div>
+        </div>
 
-    </label>
-    <label>Full Address: <textarea name="address" required></textarea></label>
-    <label id="shipping-cost-label" style="font-weight: bold;"></label>
-    <label>Comments: <textarea name="message"></textarea></label>
-    <button id="order-button" type="submit" class="product-card" style="border-radius: 24px; padding: 0.75rem; max-width: 200px;">Order <span id="btn-name"></span></button>
-  </form>
-</div>
-<div class="product-info"></div>
+        <!-- Right Column -->
+        <form id="order-form" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; max-width: 400px;">
+          <input type="hidden" name="product" id="form-product">
+          <label><span data-i18n="quantity">Kogus:</span> <input type="number" name="quantity" id="form-quantity" min="1" value="1"></label>
+          <label><span data-i18n="email">Email:</span> <input type="email" name="user_email" required></label>
+          <label><span data-i18n="phone">Telefon:</span> <input type="tel" name="user_phone" required></label>
 
+          <label for="country-select" style="font-weight: bold;" data-i18n="country">Riik:</label>
+          <select name="country" id="country-select" required>
+            <!-- Countries (kept in Estonian for now) -->
+        <option value="" disabled selected data-i18n="selectCountry">Vali riik</option>
+        <option value="Estonia" data-i18n="Estonia">Eesti</option>
+        <option value="Finland" data-i18n="Finland">Soome</option>
+        <option value="Germany" data-i18n="Germany">Saksamaa</option>
+        <option value="Greece" data-i18n="Greece">Kreeka</option>
+	    <option value="Hungary"data-i18n="Hungary">Ungari</option>
+	    <option value="Iceland"data-i18n="Iceland">Island</option>
+	    <option value="Ireland"data-i18n="Ireland">Iirimaa</option>
+	    <option value="Italy"data-i18n="Italy">Itaalia</option>
+	    <option value="Kosovo"data-i18n="Kosovo">Kosovo</option>
+	    <option value="Latvia"data-i18n="Latvia">Läti</option>
+	    <option value="Liechtenstein"data-i18n="Liechtenstein">Liechtenstein</option>
+ 	    <option value="Lithuania"data-i18n="Lithuania">Leedu</option>
+	    <option value="Luxembourg"data-i18n="Luxembourg">Luksemburg</option>
+	    <option value="Malta"data-i18n="Malta">Malta</option>
+	    <option value="Moldova"data-i18n="Moldova">Moldova</option>
+	    <option value="Monaco"data-i18n="Monaco">Monaco</option>
+	    <option value="Montenegro"data-i18n="Montenegro">Montenegro</option>
+	    <option value="Netherlands"data-i18n="Netherlands">Holland</option>
+	    <option value="North Macedonia"data-i18n="NorthMacedonia">Põhja-Makedoonia</option>
+	    <option value="Norway"data-i18n="Norway">Norra</option>
+	    <option value="Poland"data-i18n="Poland">Poola</option>
+	    <option value="Portugal"data-i18n="Portugal">Portugal</option>
+	    <option value="Romania"data-i18n="Romania">Rumeenia</option>
+	    <option value="Russia"data-i18n="Russia">Venemaa</option>
+	    <option value="San Marino"data-i18n="SanMarino">San Marino</option>
+	    <option value="Serbia"data-i18n="Serbia">Serbia</option>
+	    <option value="Slovakia"data-i18n="Slovakia">Slovakkia</option>
+	    <option value="Slovenia"data-i18n="Slovenia">Sloveenia</option>
+	    <option value="Spain"data-i18n="Spain">Hispaania</option>
+	    <option value="Sweden"data-i18n="Sweden">Rootsi</option>
+	    <option value="Switzerland"data-i18n="Switzerland">Šveits</option>
+	    <option value="Turkey"data-i18n="Turkey">Türgi</option>
+	    <option value="Ukraine"data-i18n="Ukraine">Ukraina</option>
+	    <option value="United Kingdom"data-i18n="UnitedKingdom">Ühendkuningriik</option>
+	    <option value="Vatican City"data-i18n="VaticanCity">Vatikan</option>
+          </select>
 
+          <label><span data-i18n="address">Aadress:</span> <textarea name="address" required></textarea></label>
+          <label><span data-i18n="message">Sõnum:</span> <textarea name="message"></textarea></label>
+          
+          <button id="order-button" type="submit" class="product-card" style="border-radius: 24px; padding: 0.75rem; max-width: 200px;">
+            <span data-i18n="orderBtn">Telli</span> <span id="btn-name"></span>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init({
-      publicKey: "fDC7IwPjHjeATTz2c",
-    });
-  })();
-</script>
-<script src="js/product.js"></script>
-<script src=js/main.js"></script>
-<script id="translations" type="application/json">
-const translations = {
-  en: {
-    logo: "Invert Nest",
-    invertebrates: "Invertebrates",
-    enclosures: "Enclosures",
-    decorations: "Decorations",
-    foodNutrition: "Food & Nutrition",
-    rodents: "Rodents",
-    cages: "Cages",
-    toys: "Toys",
-    food: "Food",
-    fish: "Fish",
-    tanksStands: "Tanks & Stands",
-    aquascaping: "Aquascaping",
-    flakePelletFood: "Flake & Pellet Food",
-    reptiles: "Reptiles",
-    terrariums: "Terrariums",
-    foodSupplements: "Food & Supplements",
-    amphibians: "Amphibians",
-    habitats: "Habitats",
-    dietNutrition: "Diet & Nutrition",
-    birds: "Birds",
-    cagesAviaries: "Cages & Aviaries",
-    perchesToys: "Perches & Toys",
-    seedsFeeders: "Seeds & Feeders",
-    bannerTitle: "Customize for Your Pet Type!",
-    bannerDesc: "Change this banner text and image to match each category’s vibe.",
-  },
-  et: {
-    logo: "Invert Pesa",
-    invertebrates: "Selgrootud",
-    enclosures: "Terrariumid",
-    decorations: "Dekoratsioonid",
-    foodNutrition: "Toit ja Toitumine",
-    rodents: "Närilised",
-    cages: "Puurid",
-    toys: "Mänguasjad",
-    food: "Toit",
-    fish: "Kalad",
-    tanksStands: "Akvaariumid ja Alused",
-    aquascaping: "Akvaariumikujundus",
-    flakePelletFood: "Helbed ja Graanulid",
-    reptiles: "Roomajad",
-    terrariums: "Terrariumid",
-    foodSupplements: "Toit ja Toidulisandid",
-    amphibians: "Kahepaiksed",
-    habitats: "Elupaigad",
-    dietNutrition: "Toitumine",
-    birds: "Linnud",
-    cagesAviaries: "Puurid ja Linnumajad",
-    perchesToys: "Istumispulgad ja Mänguasjad",
-    seedsFeeders: "Seemned ja Söötjad",
-    bannerTitle: "Kohanda vastavalt oma lemmikule!",
-    bannerDesc: "Muuda see bänner ja pilt igale kategooriale sobivaks.",
-  },
-  ru: {
-    logo: "Гнездо Инвертов",
-    invertebrates: "Беспозвоночные",
-    enclosures: "Террариумы",
-    decorations: "Декорации",
-    foodNutrition: "Питание",
-    rodents: "Грызуны",
-    cages: "Клетки",
-    toys: "Игрушки",
-    food: "Еда",
-    fish: "Рыбы",
-    tanksStands: "Аквариумы и Подставки",
-    aquascaping: "Акваскейпинг",
-    flakePelletFood: "Хлопья и Гранулы",
-    reptiles: "Рептилии",
-    terrariums: "Террариумы",
-    foodSupplements: "Еда и Добавки",
-    amphibians: "Земноводные",
-    habitats: "Среда обитания",
-    dietNutrition: "Диета и Питание",
-    birds: "Птицы",
-    cagesAviaries: "Клетки и Вольеры",
-    perchesToys: "Жёрдочки и Игрушки",
-    seedsFeeders: "Семена и Кормушки",
-    bannerTitle: "Настройте под своего питомца!",
-    bannerDesc: "Измените этот баннер и изображение для каждой категории.",
+  <!-- Scripts -->
+  <script src="js/lang.js"></script>
+  <script src="js/product.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init({ publicKey: "fDC7IwPjHjeATTz2c" });
+    })();
+  </script>
+
+  <!-- Translation Script -->
+  <script>
+    const translations = {
+      en: {
+	    homepage: "Home",
+        invertebrates: "Invertebrates",
+		amphibians: "Amphibians",
+		rodents: "Rodents",
+		reptiles: "Reptiles",
+		birds: "Birds",
+		fish: "Fish",
+        enclosures: "Enclosures",
+        decorations: "Decorations",
+        foodNutrition: "Food & Nutrition",
+        unitPrice: "Unit Price:",
+        shipping: "Shipping:",
+        total: "Total:",
+        quantity: "Quantity:",
+        email: "Email:",
+        phone: "Phone:",
+        country: "Country:",
+        selectCountry: "Select Country",
+        address: "Address:",
+        message: "Message:",
+        orderBtn: "Order",
+		Estonia: "Estonia",
+		Finland: "Finland",
+		Germany: "Germany",
+		Greece: "Greece",
+		Hungary: "Hungary",
+		Iceland: "Iceland",
+		Ireland: "Ireland",
+		Italy: "Italy",
+		Kosovo: "Kosovo",
+		Latvia: "Latvia",
+		Liechtenstein: "Liechtenstein",
+		Lithuania: "Lithuania",
+		Luxembourg: "Luxembourg",
+		Malta: "Malta",
+		Moldova: "Moldova",
+		Monaco: "Monaco",
+		Montenegro: "Montenegro",
+		Netherlands: "Netherlands",
+		NorthMacedonia: "North Macedonia",
+		Norway: "Norway",
+		Poland: "Poland",
+		Portugal: "Portugal",
+		Romania: "Romania",
+		Russia: "Russia",
+		SanMarino: "San Marino",
+		Serbia: "Serbia",
+		Slovakia: "Slovakia",
+		Slovenia: "Slovenia",
+		Spain: "Spain",
+		Sweden: "Sweden",
+		Switzerland: "Switzerland",
+		Turkey: "Turkey",
+		Ukraine: "Ukraine",
+		UnitedKingdom: "United Kingdom",
+		VaticanCity: "Vatican City"
+
+
+      },
+      ru: {
+	    homepage: "дом",
+        invertebrates: "Беспозвоночные",
+        enclosures: "Террариумы",
+		amphibians: "Амфибии",
+		rodents: "Грызуны",
+		reptiles: "Рептилии",
+		birds: "Птицы",
+		fish: "Рыбы",
+        decorations: "Украшения",
+        foodNutrition: "Питание",
+        unitPrice: "Цена за единицу:",
+        shipping: "Доставка:",
+        total: "Итого:",
+        quantity: "Количество:",
+        email: "Почта:",
+        phone: "Телефон:",
+        country: "Страна:",
+        selectCountry: "Выберите страну",
+        address: "Адрес:",
+        message: "Сообщение:",
+        orderBtn: "Заказать",
+		Estonia: "Эстония",
+		Finland: "Финляндия",
+		Germany: "Германия",
+		Greece: "Греция",
+		Hungary: "Венгрия",
+		Iceland: "Исландия",
+		Ireland: "Ирландия",
+		Italy: "Италия",
+		Kosovo: "Косово",
+		Latvia: "Латвия",
+		Liechtenstein: "Лихтенштейн",
+		Lithuania: "Литва",
+		Luxembourg: "Люксембург",
+		Malta: "Мальта",
+		Moldova: "Молдова",
+		Monaco: "Монако",
+		Montenegro: "Черногория",
+		Netherlands: "Нидерланды",
+		NorthMacedonia: "Северная Македония",
+		Norway: "Норвегия",
+		Poland: "Польша",
+		Portugal: "Португалия",
+		Romania: "Румыния",
+		Russia: "Россия",
+		SanMarino: "Сан-Марино",
+		Serbia: "Сербия",
+		Slovakia: "Словакия",
+		Slovenia: "Словения",
+		Spain: "Испания",
+		Sweden: "Швеция",
+		Switzerland: "Швейцария",
+		Turkey: "Турция",
+		Ukraine: "Украина",
+		UnitedKingdom: "Великобритания",
+		VaticanCity: "Ватикан"
+
+      }
+      // Estonian is default, so no need to translate
+    };
+
+    function applyTranslations(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (lang !== "et" && translations[lang] && translations[lang][key]) {
+  el.textContent = translations[lang][key];
+} else if (lang === "et") {
+  // Restore Estonian from a data-original attribute
+  if (el.dataset.original) {
+    el.textContent = el.dataset.original;
   }
-};
-</script>
-<script src="js/language.js"></script>
+}
+
+      });
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      applyTranslations(lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang;
+        setLanguage(lang);
+	    location.reload();
+      });
+    });
+
+    // On page load
+    const savedLang = localStorage.getItem("lang") || "et";
+    applyTranslations(savedLang);
+
+// Store original Estonian text for restoring later
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  if (!el.dataset.original) {
+    el.dataset.original = el.textContent;
+  }
+});
+
+
+
+  </script>
 </body>
 </html>

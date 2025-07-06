@@ -18,13 +18,63 @@
       <img src="imgs/russianflag.jpg" alt="Russian">
     </button>
   </div>
-
   <nav class="navbar">
-    <div class="logo">PlantNest</div>
+
+<div class="logo" data-i18n="logo">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <span>Invert Nest</span>
+</div>
+
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="/about">About</a></li>
+	<a href="index.html" data-i18n="homepage">Koduleht</a>
+      <li class="dropdown">
+        <a href="#" data-i18n="invertebrates">Selgrootud</a>
+        <ul class="dropdown-menu">
+          <li><a href="inverts_enclosures.html" data-i18n="enclosures">Terraariumid</a></li>
+          <li><a href="inverts_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="inverts_food.html" data-i18n="foodNutrition">Toit ja Toitumine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="rodents">Närilised</a>
+        <ul class="dropdown-menu">
+          <li><a href="rodents_enclosures.html" data-i18n="cages">Puurid</a></li>
+          <li><a href="rodents_toys.html" data-i18n="toys">Mänguasjad</a></li>
+          <li><a href="rodents_food.html" data-i18n="food">Toit</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="fish">Kalad</a>
+        <ul class="dropdown-menu">
+          <li><a href="fish_enclosures.html" data-i18n="tanksStands">Akvaariumid ja Alused</a></li>
+          <li><a href="fish_aquascaping.html" data-i18n="aquascaping">Akvaariumi Sisustused</a></li>
+          <li><a href="fish_food.html" data-i18n="flakePelletFood">Toit ja Toitumine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="reptiles">Roomajad</a>
+        <ul class="dropdown-menu">
+          <li><a href="reptiles_enclosures.html" data-i18n="terrariums">Terraariumid</a></li>
+          <li><a href="reptiles_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="reptiles_food.html" data-i18n="foodSupplements">Toit ja Toitumine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="amphibians">Kahepaiksed</a>
+        <ul class="dropdown-menu">
+          <li><a href="amphibians_enclosures.html" data-i18n="habitats">Elupaigad</a></li>
+          <li><a href="amphibians_decorations.html" data-i18n="decorations">Sisustus</a></li>
+          <li><a href="amphibians_food.html" data-i18n="dietNutrition">Toit ja Toitumine</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-i18n="birds">Linnud</a>
+        <ul class="dropdown-menu">
+          <li><a href="birds_cages.html" data-i18n="cagesAviaries">Puurid ja Linnumajad</a></li>
+          <li><a href="birds_perches.html" data-i18n="perchesToys">Õrred ja Mänguasjad</a></li>
+          <li><a href="birds_food.html" data-i18n="seedsFeeders">Seemned ja Söötjad</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
