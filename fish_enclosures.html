@@ -82,7 +82,10 @@
     <div class="banner">
       <h1 data-i18n="banner1">Parimad akvaariumid KÕIGILE kaladele!</h1>
       <p data-i18n="banner2">Erinevad akvaariumid kaladele, mis on kindlasti ja täielikult ohutud kõigile kaladele.</p>
+        <div class="random-image-container">
+      <img id="randomImage" src="" alt="Cool Animal" />
     </div>
+	</div>
   </section>
 <section class="products" id="product-list">
   <!-- Products will be inserted here dynamically -->
@@ -253,6 +256,21 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
 
 
   </script>
+  
+  <script>
+  const fishImages = [
+    'https://i.ibb.co/VYPw1w3f/cute-fish1.jpg',
+    'https://i.ibb.co/rK4Q2ZtL/cute-fish2.jpg',
+    'https://i.ibb.co/KxHQ3jtP/cute-fish3.jpg'
+  ];
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const imgEl = document.getElementById('randomImage');
+    const randomIndex = Math.floor(Math.random() * fishImages.length);
+    imgEl.src = fishImages[randomIndex];
+  });
+</script>
+
 
 </body>
 </html>

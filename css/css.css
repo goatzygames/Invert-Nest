@@ -876,14 +876,7 @@ button, .nav-links a, .product-card, input, textarea {
   }
 }
 
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: sans-serif;
-      margin: 0;
-      padding: 2rem;
-    }
+
 
 .lang-switcher {
   position: fixed;
@@ -917,8 +910,7 @@ button, .nav-links a, .product-card, input, textarea {
     h1, p {
       margin-top: 2rem;
     }
-  </style>
-  
+
 .external-contact {
   margin-top: 20px;
   padding: 15px;
@@ -1292,8 +1284,9 @@ button, .nav-links a, .product-card, input, textarea {
 @media (max-width: 768px) {
   .navbar .nav-links {
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     display: none; /* hidden by default on mobile */
+	
   }
 
   .navbar.show .nav-links {
@@ -1312,6 +1305,9 @@ button, .nav-links a, .product-card, input, textarea {
   font-size: 24px;
   user-select: none;
   z-index: 9999;
+    position: fixed;
+  left: 16px;       /* distance from the left side of the screen */
+  top: 16px;        /* optional: distance from the top */
 }
 
 @media (max-width: 768px) {
@@ -1331,4 +1327,255 @@ button, .nav-links a, .product-card, input, textarea {
   cursor: pointer;
   font-size: 24px; /* optional: adjust size of ☰ */
   user-select: none;
+}
+
+.lang-flags {
+  display: flex;
+  flex-direction: row; /* Default: horizontal layout */
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Optional: full screen height */
+  gap: 1rem;
+}
+
+.lang-flags img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Stack vertically on small screens */
+@media (max-width: 768px) {
+  .lang-flags {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+/* Animate nav-links slide and fade */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar.show .nav-links {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Optional: animate links individually */
+  .navbar.show .nav-links a {
+    opacity: 0;
+    transform: translateY(-5px);
+    animation: fadeInUp 0.4s forwards;
+  }
+
+  .navbar.show .nav-links a:nth-child(1) { animation-delay: 0.05s; }
+  .navbar.show .nav-links a:nth-child(2) { animation-delay: 0.1s; }
+  .navbar.show .nav-links a:nth-child(3) { animation-delay: 0.15s; }
+  .navbar.show .nav-links a:nth-child(4) { animation-delay: 0.2s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Optional: smooth transition for navbar itself */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 9999;
+  display: block;
+  font-size: 0; /* hide actual ☰ character */
+}
+
+.menu-toggle::before,
+.menu-toggle::after,
+.menu-toggle::marker {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #000; /* match your desired color */
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle::before {
+  top: 0;
+}
+
+.menu-toggle::after {
+  top: 10px;
+}
+
+.menu-toggle::marker {
+  top: 20px;
+}
+
+/* When menu is open */
+.navbar.show .menu-toggle::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar.show .menu-toggle::after {
+  opacity: 0;
+}
+
+.navbar.show .menu-toggle::marker {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* here */
+
+.menu-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 0; /* hide ☰ if it's still there */
+}
+
+.menu-toggle::before,
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgba(1, 39, 0, 0.8); /* or your preferred color */
+  border-radius: 2px;
+  transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.menu-toggle::before {
+  top: 4px;
+}
+
+.menu-toggle::after {
+  top: 12px;
+}
+
+/* Animate into an X when navbar is open */
+.navbar.show .menu-toggle::before {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.navbar.show .menu-toggle::after {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+/* Always hide the menu toggle by default (desktop) */
+.menu-toggle {
+  display: none;
+}
+
+/* Show the menu toggle ONLY on screens ≤768px (phones/tablets) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  /* Hide lang-switcher by default (invisible but still taking space) */
+  .lang-switcher {
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    display: flex; /* keep display so it's always in layout */
+	margin-top: 0rem;
+	
+    transform: scale(0.7); /* scale down to 70% size */
+    right: 8px;  /* distance from the right edge */
+    top: 8px;       /* align to top of the container */
+    transform: scale(0.7);
+    transform-origin: top right; /* scale from top-right corner */
+  }
+}
+
+  /* Show lang-switcher when menu toggled */
+  .navbar.show .lang-switcher {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Logo text fade */
+  #logo_text {
+    transition: opacity 0.4s ease;
+    opacity: 1;
+  }
+}
+
+.random-image-container {
+  position: fixed; /* Keeps it in place when scrolling */
+  top: 20px;        /* Adjust as needed */
+  right: 20px;      /* Aligns it to the right edge */
+  z-index: 1000;    /* Ensures it stays above other content */
+}
+
+.random-image-container img {
+  width: 400px;     /* Makes the image smaller */
+  height: auto;     /* Preserves aspect ratio */
+  border-radius: 8px; /* Optional: adds rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+}
+
+.random-image-container {
+  position: fixed;
+  top: 6rem;
+  right: 20px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: -9999;
+}
+
+.random-image-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.random-image-container img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+  z-index: -9999;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .random-image-container {
+    top: 17rem;
+    right: 10px;
+    width: 35vw;
+    padding: 8px;
+	z-index: -9999;
+  }
 }

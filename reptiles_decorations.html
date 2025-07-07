@@ -82,7 +82,10 @@
     <div class="banner">
       <h1 data-i18n="banner1">Parimad kaunistused roomajate vivariumitele!</h1>
       <p data-i18n="banner2">Palju erinevaid kaunistusvalikuid sinu sõbralikule roomajale!</p>
+        <div class="random-image-container">
+      <img id="randomImage" src="" alt="Cool Animal" />
     </div>
+	</div>
   </section>
 <section class="products" id="product-list">
   <!-- Products will be inserted here dynamically -->
@@ -253,6 +256,21 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
 
 
   </script>
+  
+  <script>
+  const reptileImages = [
+    'https://i.ibb.co/fzRs10Fw/cute-lizard.jpg',
+    'https://i.ibb.co/Q7fRtGr9/cute-reptile.jpg',
+    'https://i.ibb.co/h19Y4HHF/cute-chameleon.jpg'
+  ];
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const imgEl = document.getElementById('randomImage');
+    const randomIndex = Math.floor(Math.random() * reptileImages.length);
+    imgEl.src = reptileImages[randomIndex];
+  });
+</script>
+
 
 </body>
 </html>

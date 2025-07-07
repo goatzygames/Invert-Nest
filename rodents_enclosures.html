@@ -80,9 +80,12 @@
   </nav>
   <section class="hero">
     <div class="banner">
-      <h1 data-i18n="banner1">Suured näriliste elamised!h1>
+      <h1 data-i18n="banner1">Suured näriliste elamised!</h1>
       <p data-i18n="banner2">Kõige olulisem aspekt sinu väikese sõbra elus – suur elamispind!!!</p>
+        <div class="random-image-container">
+      <img id="randomImage" src="" alt="Cool Animal" />
     </div>
+	</div>
   </section>
 <section class="products" id="product-list">
   <!-- Products will be inserted here dynamically -->
@@ -253,6 +256,21 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
 
 
   </script>
+  
+  <script>
+  const rodentImages = [
+    'https://i.ibb.co/67ndxNJk/cute-chinchilla.jpg',   // Chinchilla
+    'https://i.ibb.co/d3TYRkj/cute-sugarglider.jpg',   // Sugar glider (not a rodent but often grouped similarly)
+    'https://i.ibb.co/RT9kczDM/cute-capybara.jpg'       // Capybara
+  ];
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const imgEl = document.getElementById('randomImage');
+    const randomIndex = Math.floor(Math.random() * rodentImages.length);
+    imgEl.src = rodentImages[randomIndex];
+  });
+</script>
+
 
 </body>
 </html>

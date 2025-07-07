@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
+<script>
+  function toggleMenu() {
+    document.querySelector('.navbar').classList.toggle('show');
+  }
+</script>
   <!-- Language Switcher -->
   <div class="lang-switcher">
     <button class="lang-btn" data-lang="et"><img src="imgs/estonianflag.jpg" alt="Estonian"></button>
@@ -334,5 +339,7 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
 
 
   </script>
+  
+  <script src="js/main.js"></script>
 </body>
 </html>
