@@ -1329,26 +1329,9 @@ button, .nav-links a, .product-card, input, textarea {
   user-select: none;
 }
 
-.lang-flags {
-  display: flex;
-  flex-direction: row; /* Default: horizontal layout */
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh; /* Optional: full screen height */
-  gap: 1rem;
-}
-
 .lang-flags img {
   max-width: 100%;
   height: auto;
-}
-
-/* Stack vertically on small screens */
-@media (max-width: 768px) {
-  .lang-flags {
-    flex-direction: column;
-    justify-content: space-between;
-  }
 }
 
 /* Animate nav-links slide and fade */
