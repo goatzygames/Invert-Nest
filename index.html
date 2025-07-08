@@ -199,6 +199,56 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!-- Blog Section -->
+<section class="post-container1">
+  <h2 style="text-align: center; margin: 2rem 0; color: #2c4a2a;" data-i18n="last_posts">Viimased Postitused</h2>
+  <div id="postSection" class="products"></div>
+</section>
+
+<script src="post.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const blogSection = document.getElementById("postSection");
+
+  Posts.forEach(post => {
+    const card = document.createElement("div");
+    card.className = "product-card-v2";
+
+    const img = document.createElement("img");
+    const lang = localStorage.getItem("lang") || "et";
+    img.src = post.images[0];
+    img.alt = post.title[lang] || post.title["et"];
+
+    const title = document.createElement("h3");
+    const preview = document.createElement("p");
+
+    title.textContent = post.title[lang] || post.title["et"];
+    preview.textContent = post.paragraphs[lang][0] || post.paragraphs["et"][0];
+
+    const button = document.createElement("button");
+    button.textContent = {
+      et: "Loe edasi",
+      en: "Read More",
+      ru: "Читать далее"
+    }[lang];
+
+    button.onclick = () => {
+      localStorage.setItem("selectedPostIndex", Posts.indexOf(post));
+      window.location.href = "post.html";
+    };
+
+    card.appendChild(img);
+    card.appendChild(title);
+    card.appendChild(preview);
+    card.appendChild(button);
+
+    blogSection.appendChild(card);
+  });
+});
+
+
+</script>
 
 
 
@@ -411,7 +461,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		add_your_product: "Submit Your Product",
 		add_your_product_nb: "NB! Doesn't work currently!\n \nSubmit your animal supplies here which you would want to sell!",
 		category_trans: "Category",
-		product_name: "Product Name"
+		product_name: "Product Name",
+		last_posts: "Last Posts"
 
 
       },
@@ -465,7 +516,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		add_your_product: "Отправьте ваш товар",
 		add_your_product_nb: "Внимание! Сейчас не работает!\n \nЕсть что-то, от чего вы хотите избавиться? Отправьте свое объявление, и мы разместим его здесь!",
 		category_trans: "Категория",
-		product_name: "Название товара"
+		product_name: "Название товара",
+		last_posts: "последние сообщения"
 
       }
       // Estonian is default, so no need to translate
@@ -542,6 +594,8 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
     imgEl.src = images[randomIndex];
   });
 </script>
+
+<script src="post.js"></script>
 
 
 </body>

@@ -1482,7 +1482,6 @@ button, .nav-links a, .product-card, input, textarea {
   /* Hide lang-switcher by default (invisible but still taking space) */
   .lang-switcher {
     opacity: 1;
-    pointer-events: none;
     transition: opacity 0.4s ease, visibility 0.4s ease;
     display: flex; /* keep display so it's always in layout */
 	margin-top: 0rem;
@@ -1561,4 +1560,56 @@ button, .nav-links a, .product-card, input, textarea {
     padding: 8px;
 	z-index: -9999;
   }
+}
+
+.post-container1 {
+  background-color: #f4f9f4;
+  border: 2px solid #d0e6d0;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  max-width: 1100px;
+  box-shadow: 0 8px 20px rgba(44, 74, 42, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-container1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(44, 74, 42, 0.15);
+}
+
+.post-container1 h2 {
+  font-size: 2.2rem;
+  color: #2c4a2a;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  border-bottom: 2px solid #cde3cd;
+  padding-bottom: 1rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-container1 .products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.post-image {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
