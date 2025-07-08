@@ -233,10 +233,11 @@ document.addEventListener("DOMContentLoaded", () => {
       ru: "Читать далее"
     }[lang];
 
-    button.onclick = () => {
-      localStorage.setItem("selectedPostIndex", Posts.indexOf(post));
-      window.location.href = "post.html";
-    };
+		button.onclick = () => {
+  		const postIndex = Posts.indexOf(post);
+		window.location.href = `post.html?id=${postIndex}`;
+		};
+
 
     card.appendChild(img);
     card.appendChild(title);
